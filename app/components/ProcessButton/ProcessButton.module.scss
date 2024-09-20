@@ -1,0 +1,26 @@
+@import '../../styles/globals.scss';
+
+.process-button{
+    width: 80px;
+    height: 80px;
+    border: 3px solid $border;
+    background-color: transparent;
+    transform: rotate(45deg);
+    cursor: pointer;
+
+    p{
+        font-size: 4rem;
+        transform: rotate(-45deg);
+        color: $border;
+
+    }
+}
+
+.process-button:focus{
+    background-color: $light-bg;
+    border: 3px solid $light-bg;
+
+    p{
+        color: transparent;
+    }
+}
