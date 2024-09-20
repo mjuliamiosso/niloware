@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Provider } from 'react-redux';
 import { store } from './store/store';
 import '../styles/globals.css';
+import './i18n';
 
 export const metadata: Metadata = {
   title: "Niloware",
