@@ -1,0 +1,17 @@
+@import '../../styles/globals.scss';
+
+.btn{
+    color: $light-bg;
+    background-color: $text;
+    padding: 20px;
+    border: none;
+
+    font-size: $fs-300;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color: $dark-bg;
+}
