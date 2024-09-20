@@ -1,7 +1,10 @@
+'use client';
+
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setLanguage } from '../../store/slices/languageSlice';
 import { RootState } from '../../store/store';
+import { useRouter } from 'next/router';
 
 const languages = [
     { code: 'en-us', label: 'English (US)' },
@@ -12,9 +15,11 @@ const languages = [
 const LanguageToggle = () => {
     const dispatch = useDispatch();
     const currentLanguage = useSelector((state: RootState) => state.language.language);
+    const router = useRouter();
 
     const handleLanguageChange = (lang: string) => {
-        dispatch(setLanguage(lang as 'en-us' | 'pt-br' | 'es'));
+        dispatch(setLanguage(lang));
+        router.push(router.pathname, router.asPath, { locale: lang });
     };
 
     return (
