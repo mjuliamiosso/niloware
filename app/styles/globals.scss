@@ -15,6 +15,17 @@ $fs-600: 2rem; //32px
 $fs-700: 3rem; //48px
 $fs-800: 3.43rem; //55px
 
-// font-family
-// $ff-primary: ;
-// $ff-secondary: ;
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+body.light {
+    --background-color: #ffffff;
+    --text-color: #000000;
+}
+
+body.dark {
+    --background-color: #000000;
+    --text-color: #ffffff;
+}
