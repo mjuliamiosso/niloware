@@ -1,0 +1,20 @@
+import { useDispatch, useSelector } from "react-redux";
+import { toggleTheme } from "../../store/slices/themeSlice";
+import { RootState } from '../../store/store';
+
+const themeToggle = () => {
+    const dispatch = useDispatch();
+    const darkMode = useSelector((state: RootState) => state.theme.darkMode);
+
+    const handleToggle = () => {
+        dispatch(toggleTheme());
+    };
+
+    return (
+        <button onClick={handleToggle}>
+            Teste
+        </button>
+    );
+};
+
+export default themeToggle;
