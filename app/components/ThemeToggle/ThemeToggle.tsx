@@ -4,7 +4,7 @@ import { RootState } from '../../store/store';
 
 const ThemeToggle = () => {
     const dispatch = useDispatch();
-    const theme = useSelector((state: RootState) => state.theme.darkMode);
+    const theme = useSelector((state: RootState) => state.theme.theme);
 
     const handleToggle = () => {
         dispatch(toggleTheme());
