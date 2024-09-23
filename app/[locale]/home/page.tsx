@@ -5,7 +5,7 @@ import './page.scss'
 import { useTranslation } from '../../hooks/useTranslation';
 import Navbar from '../../components/Navbar/Navbar'
 import Hero from '../../sections/Hero/Hero'
-import ServiceCard from '../../components/ServiceCard/ServiceCard'
+import Services from '../../sections/Services/Services'
 import Clients from '../../sections/Clients/Clients'
 import Footer from '../../components/Footer/Footer'
 
