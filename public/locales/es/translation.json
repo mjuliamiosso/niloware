@@ -1,5 +1,10 @@
 {
-    "welcome": "Bienvenido a Niloware",
-    "language": "Español"
+  "home": {
+      "welcome": "Bienvenido a Niloware",
+      "language": "Español"
+  },
+  "tos": {
+      "title": "Términos de Servicio",
+      "language": "Español"
   }
-  
+}
