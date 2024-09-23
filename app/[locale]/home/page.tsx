@@ -3,6 +3,7 @@
 import React from 'react';
 import './page.scss'
 import { useTranslation } from '../../hooks/useTranslation';
+import Navbar from '../../components/Navbar/Navbar'
 import Hero from '../../sections/Hero/Hero'
 import ServiceCard from '../../components/ServiceCard/ServiceCard'
 import Clients from '../../sections/Clients/Clients'
@@ -13,6 +14,7 @@ const HomePage: React.FC = () => {
 
     return (
         <div>
+            <Navbar></Navbar>
             <Hero></Hero>
             <Footer></Footer>
         </div>
