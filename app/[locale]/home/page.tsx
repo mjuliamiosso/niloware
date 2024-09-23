@@ -6,6 +6,7 @@ import { useTranslation } from '../../hooks/useTranslation';
 import Hero from '../../sections/Hero/Hero'
 import ServiceCard from '../../components/ServiceCard/ServiceCard'
 import Clients from '../../sections/Clients/Clients'
+import Footer from '../../components/Footer/Footer'
 
 const HomePage: React.FC = () => {
     const translations = useTranslation();
@@ -13,7 +14,7 @@ const HomePage: React.FC = () => {
     return (
         <div>
             <Hero></Hero>
-            <Clients></Clients>
+            <Footer></Footer>
         </div>
     );
 };
