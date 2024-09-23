@@ -1,9 +1,24 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    i18n: {
-        locales: ['en-us', 'pt-br', 'es'],
-        defaultLocale: 'pt-br',
-    }
+    async redirects() {
+        return [
+            {
+                source: '/',
+                destination: '/en-us/home',
+                permanent: true,
+            },
+            {
+                source: '/:locale(en-us|pt-br|es)',
+                destination: '/:locale/home',
+                permanent: true,
+            },
+            {
+                source: '/(home|tos)',
+                destination: '/en-us/home',
+                permanent: true,
+            }
+        ];
+    },
 };
 
 export default nextConfig;
