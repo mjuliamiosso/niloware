@@ -1,25 +1,25 @@
 'use client';
 
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { setLanguage } from '../../store/slices/languageSlice';
-import { RootState } from '../../store/store';
-import { useRouter } from 'next/router';
+import { usePathname, useRouter, useParams } from 'next/navigation';
 
 const languages = [
     { code: 'en-us', label: 'English (US)' },
     { code: 'pt-br', label: 'Português (BR)' },
-    { code: 'es', label: 'Español' }
+    { code: 'es', label: 'Español' },
 ];
 
 const LanguageToggle = () => {
-    const dispatch = useDispatch();
-    const currentLanguage = useSelector((state: RootState) => state.language.language);
     const router = useRouter();
+    const pathname = usePathname();
+    const params = useParams();
+    const currentLocale = params?.locale || 'en-us';
 
     const handleLanguageChange = (lang: string) => {
-        dispatch(setLanguage(lang));
-        router.push(router.pathname, router.asPath, { locale: lang });
+        if (lang === currentLocale) return;
+
+        const newPathname = pathname.replace(`/${currentLocale}`, `/${lang}`);
+        router.push(newPathname);
     };
 
     return (
@@ -28,13 +28,13 @@ const LanguageToggle = () => {
                 <button
                     key={language.code}
                     onClick={() => handleLanguageChange(language.code)}
-                    disabled={currentLanguage === language.code}
+                    disabled={language.code === currentLocale}
                 >
                     {language.label}
                 </button>
             ))}
         </div>
-    )
-}
+    );
+};
 
 export default LanguageToggle;
