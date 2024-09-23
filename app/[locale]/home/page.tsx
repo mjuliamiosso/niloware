@@ -1,15 +1,16 @@
 'use client';
 
 import React from 'react';
+import './page.scss'
 import { useTranslation } from '../../hooks/useTranslation';
+import Hero from '../../sections/Hero/Hero'
 
 const HomePage: React.FC = () => {
     const translations = useTranslation();
 
     return (
         <div>
-            <h1>{translations.home?.welcome}</h1>
-            <p>{translations.home?.language}</p>
+            <Hero></Hero>
         </div>
     );
 };
