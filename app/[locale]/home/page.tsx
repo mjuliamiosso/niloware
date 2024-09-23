@@ -4,7 +4,7 @@ import React from 'react';
 import './page.scss'
 import { useTranslation } from '../../hooks/useTranslation';
 import Hero from '../../sections/Hero/Hero'
-import ServiceCard from '../../components/ServiceCard/ServiceCard'
+import Services from '../../sections/Services/Services'
 import Clients from '../../sections/Clients/Clients'
 
 const HomePage: React.FC = () => {
@@ -13,7 +13,7 @@ const HomePage: React.FC = () => {
     return (
         <div>
             <Hero></Hero>
-            <Clients></Clients>
+            <Services></Services>
         </div>
     );
 };
