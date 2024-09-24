@@ -1,0 +1,39 @@
+.accordion {
+    width: 100%;
+    border: 1px solid #ddd;
+  }
+  
+  .accordionItem {
+    margin: 10px 0;
+  }
+  
+  .accordionButton {
+    width: 100%;
+    background: #f1f1f1;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: left;
+    transition: background 0.2s ease-in-out;
+  
+    &:hover {
+      background: #ddd;
+    }
+  }
+  
+  .accordionContent {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding: 0 10px;
+  
+    p {
+      padding: 10px 0;
+    }
+  }
+  
+  .active {
+    max-height: 100px; /* Adjust as needed */
+  }
+  
