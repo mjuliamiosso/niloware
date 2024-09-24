@@ -5,7 +5,7 @@ import './page.scss'
 import { useTranslation } from '../../hooks/useTranslation';
 import Navbar from '../../components/Navbar/Navbar'
 import Hero from '../../sections/Hero/Hero'
-import Clients from '../../sections/Clients/Clients'
+import ThemeToggle from '@/app/components/ThemeToggle/ThemeToggle';
 
 const HomePage: React.FC = () => {
     const translations = useTranslation();
@@ -14,6 +14,7 @@ const HomePage: React.FC = () => {
         <div>
             <Navbar></Navbar>
             <Hero></Hero>
+            <ThemeToggle></ThemeToggle>
         </div>
     );
 };

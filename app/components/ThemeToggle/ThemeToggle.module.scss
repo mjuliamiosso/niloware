@@ -1,0 +1,27 @@
+.toggleButton {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    padding: 0;
+
+    svg {
+        width: 20px;
+        height: 20px;
+        color: var(--icon-color);
+    }
+
+    &:hover {
+        background-color: var(--button-hover-bg);
+
+        svg {
+            color: var(--icon-hover-color);
+        }
+    }
+}
