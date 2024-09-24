@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react';
 import styles from './Navbar.module.scss'
 import classNames from 'classnames'
 import { IoMdMenu } from "react-icons/io";
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <div className={styles.navbar}>
       <div className={classNames(styles['navbar-container'], 'container')}>
