@@ -15,28 +15,31 @@ const Accordion: React.FC<AccordionProps> = ({ items }) => {
 
   const toggleAccordion = (index: number) => {
     setActiveIndex(activeIndex === index ? null : index);
+    
   };
 
   return (
     <div className={styles.accordion}>
-      {items.map((item, index) => (
-        <div key={index} className={styles.accordionItem}>
-          <button
-            className={styles.accordionButton}
-            onClick={() => toggleAccordion(index)}
-          >
-            {item.title}
-          </button>
-          <div
-            className={`${styles.accordionContent} ${
-              activeIndex === index ? styles.active : ''
-            }`}
-          >
-            <p>{item.content}</p>
-          </div>
+    {items.map((item, index) => (
+      <div key={index} className={styles['accordion-item']}>
+        <button
+          className={`${styles['accordion-button']} ${
+            activeIndex === index ? styles.isOpen : ''
+          }`}
+          onClick={() => toggleAccordion(index)}
+        >
+          {item.title} 
+        </button>
+        <div
+          className={`${styles['accordion-content']} ${
+            activeIndex === index ? styles.active : ''
+          }`}
+        >
+          <p>{item.content}</p>
         </div>
-      ))}
-    </div>
+      </div>
+    ))}
+  </div>
   );
 };
 
