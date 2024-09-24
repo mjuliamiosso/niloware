@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import styles from './Accordion.module.scss';
+import { LiaPlusSolid } from "react-icons/lia";
+import { LiaMinusSolid } from "react-icons/lia";
 
 interface AccordionItem {
   title: string;
@@ -28,7 +30,8 @@ const Accordion: React.FC<AccordionProps> = ({ items }) => {
           }`}
           onClick={() => toggleAccordion(index)}
         >
-          {item.title} 
+          {item.title}
+          <p>{activeIndex === index ? <LiaMinusSolid /> : <LiaPlusSolid />} </p>
         </button>
         <div
           className={`${styles['accordion-content']} ${
