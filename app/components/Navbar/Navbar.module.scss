@@ -1,19 +1,19 @@
-@import '../../styles/globals.scss';
+@import '../../styles/variables';
 
-.navbar{
+.navbar {
     background-color: $dark-bg;
     padding: 15px 0;
 }
 
-.navbar{
+.navbar {
 
-    h3{
+    h3 {
         font-size: $fs-700;
         text-transform: uppercase;
         color: $light-bg;
     }
 
-    h3 span{
+    h3 span {
         color: $primary;
     }
 
@@ -47,10 +47,11 @@
     gap: 20px;
     height: 100dvh;
 
-    a{
+    a {
         color: $light-bg;
     }
 }
+
 
 .navbar-container .open{
         display: flex;

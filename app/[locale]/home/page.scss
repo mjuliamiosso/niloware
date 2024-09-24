@@ -1,4 +1,4 @@
-@import '../../styles/globals.scss';
+@import '../../styles/variables';
 
 * {
     margin: 0;
@@ -8,7 +8,7 @@
     list-style: none;
 }
 
-.container{
+.container {
     max-width: 1024px;
     margin-left: auto;
     margin-right: auto;
@@ -16,16 +16,16 @@
     padding-right: 20px;
 }
 
-@media (min-width: 1024px){
-    .container{
+@media (min-width: 1024px) {
+    .container {
         max-width: 1440px;
         padding-left: 20px;
         padding-right: 20px;
     }
 }
 
-@media (min-width: 1440px){
-    .container{
+@media (min-width: 1440px) {
+    .container {
         max-width: 1440px;
         padding-left: 0px;
         padding-right: 0px;
