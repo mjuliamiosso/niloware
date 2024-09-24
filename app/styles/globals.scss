@@ -1,20 +1,30 @@
-// colors
-$primary: #347BDB;
-$text: #29282D;
-$dark-bg: #111111;
-$light-bg: #FAFAFA;
-$border: #CBCBCB;
+@import './variables';
 
-// typography
-// font-size
-$fs-200: 1rem; //16px
-$fs-300: 1.25rem; //20px
-$fs-400: 1.5rem; //24px
-$fs-500: 1.75rem; //28px
-$fs-600: 2rem; //32px
-$fs-650: 2.25rem; //32px
-$fs-700: 3rem; //48px
-$fs-800: 3.43rem; //55px
+// Fonts
+@font-face {
+    font-family: 'Dinnextw1g';
+    src: url('/fonts/dinnextw1g-bold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Tungsten';
+    src: url('/fonts/tungsten-light.woff2') format('woff2'),
+        url('/fonts/tungsten-light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+html {
+    font-family: 'Dinnextw1g', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: $light-bg;
+}
 
 .light {
     --background-color: #ffffff;
