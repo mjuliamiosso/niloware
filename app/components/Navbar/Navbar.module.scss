@@ -1,23 +1,23 @@
-@import '../../styles/globals.scss';
+@import '../../styles/variables';
 
-.navbar{
+.navbar {
     background-color: $dark-bg;
     padding: 10px 0;
 }
 
-.navbar{
+.navbar {
 
-    h3{
+    h3 {
         font-size: $fs-700;
         text-transform: uppercase;
         color: $light-bg;
     }
 
-    h3 span{
+    h3 span {
         color: $primary;
     }
 
-    .navbar-btn{
+    .navbar-btn {
         padding: 10px 20px;
         border: none;
         background-color: $primary;
@@ -28,16 +28,16 @@
     }
 }
 
-.navbar-links{
+.navbar-links {
     display: flex;
     gap: 10px;
 
-    a{
+    a {
         color: $light-bg;
     }
 }
 
-.navbar-menu{
+.navbar-menu {
     background: none;
     border: none;
     font-size: $fs-700;

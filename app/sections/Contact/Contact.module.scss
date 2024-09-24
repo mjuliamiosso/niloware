@@ -1,12 +1,12 @@
-@import '../../styles/globals.scss';
+@import '../../styles/variables';
 
-.contact{
+.contact {
     background-color: $light-bg;
     padding: 80px;
 }
 
-.contact-container{
-    h2{
+.contact-container {
+    h2 {
         font-size: $fs-700;
         color: $text;
         text-transform: uppercase;
@@ -14,27 +14,31 @@
     }
 }
 
-.contact-input{
+.contact-input {
     display: flex;
     flex-direction: column;
     gap: 10px;
 
-    input, textarea, button{
+    input,
+    textarea,
+    button {
         width: 100%;
         padding: 15px;
         border: 1px solid $border;
         font-size: $fs-300;
     }
-    input::placeholder, textarea::placeholder{
+
+    input::placeholder,
+    textarea::placeholder {
         color: $border;
     }
 
-    textarea{
+    textarea {
         height: 120px;
         resize: none;
     }
 
-    button{
+    button {
         margin-top: 38px;
         background-color: $text;
         color: $light-bg;
@@ -44,25 +48,25 @@
         cursor: pointer;
     }
 
-    button:hover{
+    button:hover {
         background-color: $dark-bg;
     }
 }
 
-.contact-input-container{
+.contact-input-container {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-@media (min-width: 1024px){
-    .contact-input{
-        textarea{
+@media (min-width: 1024px) {
+    .contact-input {
+        textarea {
             height: 160px;
         }
     }
 
-    .contact-input-container{
+    .contact-input-container {
         flex-direction: row;
         gap: 10px;
     }
