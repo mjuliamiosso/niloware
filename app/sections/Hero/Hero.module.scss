@@ -1,27 +1,27 @@
-@import '../../styles/globals.scss';
+@import '../../styles/variables';
 
-.hero{
+.hero {
     background-color: $primary;
     padding: 80px 0;
 
-    div img{
+    div img {
         max-width: 600px;
         height: auto;
         width: 100%;
     }
 }
 
-.hero-container{
+.hero-container {
     color: $light-bg;
 
-    h1{
+    h1 {
         font-size: $fs-800;
         line-height: 3.75rem;
         margin-bottom: 20px;
         text-transform: uppercase;
     }
 
-    h3{
+    h3 {
         font-size: $fs-500;
         font-weight: 300;
         margin-bottom: 20px;
