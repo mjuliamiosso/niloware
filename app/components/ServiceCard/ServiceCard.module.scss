@@ -4,7 +4,7 @@
     padding: 40px;
     background-color: $light-bg;
     color: $text;
-    max-width: 387px;
+    max-width: 500px;
     width: 100%;
 }
 
@@ -16,12 +16,15 @@
 .service-card-plan {
     font-size: $fs-700;
     text-transform: uppercase;
+    font-family: $ff-secondary;
+    font-weight: bold;
 }
 
 .service-card-description {
     font-size: $fs-200;
     text-transform: uppercase;
     margin-bottom: 30px;
+    letter-spacing: 1px;
 }
 
 .service-card-price {
@@ -31,6 +34,12 @@
     span {
         font-size: $fs-650;
     }
+}
+
+.service-card-site p, .service-card-hosting p{
+    font-family: $ff-secondary;
+    font-size: $fs-300;
+    font-weight: bold;
 }
 
 .service-card-btn {
