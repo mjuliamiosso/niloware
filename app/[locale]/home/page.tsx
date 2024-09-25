@@ -8,6 +8,7 @@ import Clients from '../../sections/Clients/Clients';
 import Faq from '../../sections/Faq/Faq';
 import Contact from '@/app/sections/Contact/Contact';
 import Services from '@/app/sections/Services/Services';
+import Footer from '@/app/components/Footer/Footer';
 
 const HomePage: React.FC = () => {
     return (
@@ -18,6 +19,7 @@ const HomePage: React.FC = () => {
             <Services />
             <Contact />
             <Faq />
+            <Footer />
         </div>
     );
 };
