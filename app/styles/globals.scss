@@ -45,7 +45,8 @@ html {
 body {
     margin: 0;
     padding: 0;
-    background-color: $light-bg;
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
 .light {
