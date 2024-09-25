@@ -11,10 +11,11 @@
     flex-direction: column;
     align-items: center;
     gap: 80px;
-
+    
     .process-btn{
+        margin-left: 13px;
         display: flex;
-        gap: 50px;
+        gap: 30px;
     }
 
     .process-text{

@@ -32,6 +32,7 @@
         font-size: $fs-600;
         font-weight: 600;
         margin-bottom: 10px;
+        font-family: $ff-secondary;
     }
 
     .description {
@@ -41,7 +42,7 @@
 
 .resource-card:hover {
     background-color: $primary;
-    transition: .3s all ease-in-out;
+    transition: .4s all ease-in-out;
     transform: translateY(-7px);
 
     .icon {

@@ -9,12 +9,16 @@ import Faq from '../../sections/Faq/Faq';
 import Contact from '@/app/sections/Contact/Contact';
 import Services from '@/app/sections/Services/Services';
 import Footer from '@/app/components/Footer/Footer';
+import Resource from '@/app/sections/Resource/Resource';
+import Process from '@/app/sections/Process/Process';
 
 const HomePage: React.FC = () => {
     return (
         <div>
             <Navbar />
             <Hero />
+            <Resource />
+            <Process />
             <Clients />
             <Services />
             <Contact />
