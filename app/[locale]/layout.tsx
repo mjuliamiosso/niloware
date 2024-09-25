@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import ThemeProvider from '../components/ThemeProvider/ThemeProvider';
 import '../styles/globals.scss';
 
 export default function LocaleLayout({
@@ -9,10 +10,12 @@ export default function LocaleLayout({
     params: { locale: string };
 }) {
     return (
-        <html lang={params.locale}>
-            <body>
-                {children}
-            </body>
-        </html>
+        <ThemeProvider>
+            <html lang={params.locale}>
+                <body>
+                    {children}
+                </body>
+            </html>
+        </ThemeProvider>
     );
 }
