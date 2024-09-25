@@ -8,7 +8,7 @@ const Services = () => {
         <section className={styles.services}>
             <div className={classNames(styles['services-container'], 'container')}>
                 <div className={styles['services-text']}>
-                    <h2>Serviços</h2>
+                    <h2 className='subtitle light'>Serviços</h2>
                     <div className={styles['services-select']}>
                         <label htmlFor="">Hospedagem:</label>
                         <select id="plan" name="plan">

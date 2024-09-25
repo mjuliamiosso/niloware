@@ -13,7 +13,7 @@ const Faq = () => {
   return (
     <section className={styles.faq}>
       <div className={classNames(styles['faq-container'], 'container')}>
-        <h2>Faq</h2>
+        <h2 className='subtitle light'>Faq</h2>
         {/* to-do: accordion(bootstrap) */}
         <Accordion items={faqItems}></Accordion>
       </div>

@@ -6,7 +6,7 @@ const Contact = () => {
   return (
     <section className={styles.contact}>
       <div className={classNames(styles['contact-container'], 'container')}>
-        <h2>Fale conosco</h2>
+        <h2 className='subtitle dark'>Fale conosco</h2>
         <div className={styles['contact-input']}>
           <input type="text" name="" id="" placeholder='Nome' />
           <div className={styles['contact-input-container']}>

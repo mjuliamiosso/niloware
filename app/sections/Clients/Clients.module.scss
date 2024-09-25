@@ -12,12 +12,9 @@
     align-items: center;
     margin-bottom: 48px;
 
-    h2 {
-        font-size: $fs-700;
-        text-transform: uppercase;
-        color: $text;
+    h2{
+        margin-bottom: 0;
     }
-
     a {
         color: $text;
         text-transform: uppercase;

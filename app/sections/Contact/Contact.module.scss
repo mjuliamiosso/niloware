@@ -5,15 +5,6 @@
     padding: 80px;
 }
 
-.contact-container {
-    h2 {
-        font-size: $fs-700;
-        color: $text;
-        text-transform: uppercase;
-        margin-bottom: 48px;
-    }
-}
-
 .contact-input {
     display: flex;
     flex-direction: column;
@@ -26,6 +17,7 @@
         padding: 15px;
         border: 1px solid $border;
         font-size: $fs-300;
+        font-family: $ff-primary;
     }
 
     input::placeholder,
