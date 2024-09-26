@@ -76,7 +76,7 @@ body {
 }
 
 .slick-slide {
-    padding: 0 10px;
+    padding: 0 10px 30px;
 }
 
 .slick-slide:focus {
@@ -87,20 +87,24 @@ body {
     outline: none;
 }
 
+.slick-dots li{
+    margin-right: 55px;
+}
+
 .slick-dots li button:before {
-    width: 10px;
+    width: 60px;
     height: 10px;
     content: '';
     border-radius: 0;
-    background-color: gray;
+    background-color: $border;
 }
 
 .slick-dots li button:hover:before {
-    background-color: lightblue;
+    background-color: rgb(163, 196, 228);
 }
 
 .slick-dots .slick-active button:before {
-    background-color: blue;
-    width: 10px;
+    background-color: rgb(0, 80, 185);
+    width: 60px;
     height: 10px;
 }

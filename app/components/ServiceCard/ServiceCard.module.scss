@@ -36,27 +36,20 @@
     }
 }
 
-.service-card-site p, .service-card-hosting p{
+.service-card-site p,
+.service-card-hosting p {
     font-family: $ff-secondary;
     font-size: $fs-300;
     font-weight: bold;
 }
 
-.service-card-btn {
-    width: 100%;
-    color: $light-bg;
-    background: $text;
-    border: none;
-    padding: 16px;
-    text-transform: uppercase;
-    font-size: $fs-400;
-    font-weight: bold;
-    cursor: pointer;
+.service-card-container {
+    button {
+        width: 100%;
+        font-size: $fs-400;
+    }
 }
 
-.service-card-btn:hover {
-    background: $dark-bg;
-}
 
 .service-card-list {
     padding-top: 15px;

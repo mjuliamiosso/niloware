@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './Contact.module.scss'
 import classNames from 'classnames'
+import Button from '@/app/components/Button/Button'
 
 const Contact = () => {
   return (
@@ -14,7 +15,7 @@ const Contact = () => {
             <input type="text" placeholder='Telefone' />
           </div>
           <textarea name="" id="" placeholder='Escreva sua mensagem'></textarea>
-          <button>Enviar</button>
+          <Button text='Enviar'/>
         </div>
       </div>
     </section>

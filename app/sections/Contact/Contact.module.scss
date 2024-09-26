@@ -2,7 +2,7 @@
 
 .contact {
     background-color: $light-bg;
-    padding: 80px;
+    padding: 80px 0;
 }
 
 .contact-input {
@@ -32,16 +32,7 @@
 
     button {
         margin-top: 38px;
-        background-color: $text;
-        color: $light-bg;
-        text-transform: uppercase;
         font-size: $fs-400;
-        font-weight: bold;
-        cursor: pointer;
-    }
-
-    button:hover {
-        background-color: $dark-bg;
     }
 }
 

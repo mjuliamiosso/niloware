@@ -27,6 +27,7 @@
         font-weight: bold;
         cursor: pointer;
         font-family: $ff-secondary;
+        letter-spacing: 1px;
     }
 }
 
@@ -84,17 +85,39 @@
         gap: 20px;
         height: 100%;
         // width: 442px;
+
+        a {
+            display: inline-block;
+        }
+
+        a::after {
+            content: '';
+            width: 0px;
+            height: 2px;
+            display: block;
+            background: $light-bg;
+            transition: 300ms;
+        }
+
+        a:hover::after {
+            width: 100%;
+        }
     }
 
-    .navbar-links a:nth-child(5){
+    .navbar-links a:nth-child(5) {
         display: none;
     }
-    
+
     .navbar-menu {
         display: none;
     }
 
     .navbar-btn {
         display: block !important;
+    }
+
+    .navbar-btn:hover {
+        box-shadow: 0px 0px 15px 3px #347cdb80;
+        transition: all .3s ease-in-out;
     }
 }

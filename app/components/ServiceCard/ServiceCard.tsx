@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './ServiceCard.module.scss'
 import { FaCheck } from "react-icons/fa";
+import Button from '../Button/Button';
 
 interface ClientCardProps {
     plan: string;
@@ -17,7 +18,7 @@ const ServiceCard: React.FC<ClientCardProps> = ({ plan, description, price, site
                 <p className={styles['service-card-plan']}>{plan}</p>
                 <p className={styles['service-card-description']}>{description}</p>
                 <p className={styles['service-card-price']}>R$<span>{price}</span></p>
-                <button className={styles['service-card-btn']}>Escolher</button>
+                <Button text='Escolher'/>
             </div>
             <div className={styles['service-card-list']}>
                 <div className={styles['service-card-site']}>
