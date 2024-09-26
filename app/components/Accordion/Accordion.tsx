@@ -25,9 +25,7 @@ const Accordion: React.FC<AccordionProps> = ({ items }) => {
     {items.map((item, index) => (
       <div key={index} className={styles['accordion-item']}>
         <button
-          className={`${styles['accordion-button']} ${
-            activeIndex === index ? styles.isOpen : ''
-          }`}
+          className={`${styles['accordion-button']} ${activeIndex === index ? styles.isOpen : ''}`}
           onClick={() => toggleAccordion(index)}
         >
           {item.title}
