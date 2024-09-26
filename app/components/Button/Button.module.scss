@@ -1,6 +1,6 @@
-@import '../../styles/globals.scss';
+@import '../../styles/variables';
 
-.btn{
+.btn {
     color: $light-bg;
     background-color: $text;
     padding: 20px;
@@ -12,6 +12,6 @@
     cursor: pointer;
 }
 
-.btn:hover{
+.btn:hover {
     background-color: $dark-bg;
 }

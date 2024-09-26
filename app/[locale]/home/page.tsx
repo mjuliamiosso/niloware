@@ -2,17 +2,28 @@
 
 import React from 'react';
 import './page.scss'
-import { useTranslation } from '../../hooks/useTranslation';
+import Navbar from '../../components/Navbar/Navbar'
 import Hero from '../../sections/Hero/Hero'
-import Clients from '../../sections/Clients/Clients'
+import Clients from '../../sections/Clients/Clients';
+import Faq from '../../sections/Faq/Faq';
+import Contact from '@/app/sections/Contact/Contact';
+import Services from '@/app/sections/Services/Services';
+import Footer from '@/app/components/Footer/Footer';
+import Resource from '@/app/sections/Resource/Resource';
+import Process from '@/app/sections/Process/Process';
 
 const HomePage: React.FC = () => {
-    const translations = useTranslation();
-
     return (
         <div>
-            <Hero></Hero>
-            <Clients></Clients>
+            <Navbar />
+            <Hero />
+            <Resource />
+            <Process />
+            <Clients />
+            <Services />
+            <Contact />
+            <Faq />
+            <Footer />
         </div>
     );
 };

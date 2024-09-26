@@ -1,0 +1,65 @@
+@import '../../styles/variables';
+
+.contact {
+    background-color: $light-bg;
+    padding: 80px;
+}
+
+.contact-input {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    input,
+    textarea,
+    button {
+        width: 100%;
+        padding: 15px;
+        border: 1px solid $border;
+        font-size: $fs-300;
+        font-family: $ff-primary;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+        color: $border;
+    }
+
+    textarea {
+        height: 120px;
+        resize: none;
+    }
+
+    button {
+        margin-top: 38px;
+        background-color: $text;
+        color: $light-bg;
+        text-transform: uppercase;
+        font-size: $fs-400;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: $dark-bg;
+    }
+}
+
+.contact-input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+@media (min-width: 1024px) {
+    .contact-input {
+        textarea {
+            height: 160px;
+        }
+    }
+
+    .contact-input-container {
+        flex-direction: row;
+        gap: 10px;
+    }
+}
