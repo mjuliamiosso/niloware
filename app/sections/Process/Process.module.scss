@@ -16,6 +16,16 @@
         margin-left: 13px;
         display: flex;
         gap: 30px;
+
+        .active {
+            transition: all 0.3s ease-in-out;
+            background-color: $light-bg;
+            border: 3px solid $light-bg;
+        
+            p {
+                color: $primary;
+            }
+        }
     }
 
     .process-text{
@@ -43,6 +53,10 @@
         .process-text{
             color: $light-bg;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
     
             h4{
                 font-size: $fs-600;
