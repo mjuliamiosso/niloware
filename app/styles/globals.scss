@@ -1,5 +1,14 @@
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
 @import './variables';
 @import './mixins';
+
+// colors
+$primary: #347BDB;
+$text: #29282D;
+$dark-bg: #111111;
+$light-bg: #FAFAFA;
+$border: #CBCBCB;
 
 // Fonts
 @font-face {
@@ -58,4 +67,40 @@ body {
 .dark {
     --background-color: #000000;
     --text-color: #ffffff;
+}
+
+// Slick Carousel
+
+.slick-list {
+    margin: 0 -10px;
+}
+
+.slick-slide {
+    padding: 0 10px;
+}
+
+.slick-slide:focus {
+    outline: none;
+}
+
+.slick-active:focus {
+    outline: none;
+}
+
+.slick-dots li button:before {
+    width: 10px;
+    height: 10px;
+    content: '';
+    border-radius: 0;
+    background-color: gray;
+}
+
+.slick-dots li button:hover:before {
+    background-color: lightblue;
+}
+
+.slick-dots .slick-active button:before {
+    background-color: blue;
+    width: 10px;
+    height: 10px;
 }
