@@ -9,14 +9,14 @@
 }
 
 .container {
-    max-width: 1024px;
+    max-width: 768px;
     margin-left: auto;
     margin-right: auto;
     padding-left: 20px;
     padding-right: 20px;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
     .container {
         max-width: 1440px;
         padding-left: 20px;
@@ -24,10 +24,10 @@
     }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1024px) {
     .container {
         max-width: 1440px;
-        padding-left: 0px;
-        padding-right: 0px;
+        padding-left: 20px;
+        padding-right: 20px;
     }
 }

@@ -23,9 +23,10 @@
     }
 
     select {
-        border: 1px solid $border;
-        color: $border;
+        border: 1px solid $text;
+        color: $text;
         padding: 5px 10px;
+        cursor: pointer;
     }
 }
 
@@ -36,14 +37,14 @@
     gap: 20px;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 950px) {
     .services-card {
         flex-direction: row;
         justify-content: space-between;
     }
 }
 
-@media (min-width: 1440px){
+@media (min-width: 1024px){
     .services-text{
         flex-direction: row;
         justify-content: space-between;

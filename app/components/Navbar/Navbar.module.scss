@@ -70,13 +70,13 @@
     cursor: pointer;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
     .navbar-links {
         width: 365px;
     }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1024px) {
     .navbar-links {
         display: flex;
         flex-direction: row;
