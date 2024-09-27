@@ -1,21 +1,25 @@
 @import '../../styles/variables';
+@import '../../styles/mixins';
 
-.resources{
-    padding-top: 80px;
-    padding-bottom: 80px;
+.resources {
+    padding: 80px 0;
     background-color: $light-bg;
 }
 
-@media(min-width: 768px){
-    .resources-cards{
-        display: grid;
+.container {
+    @include container;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @media (min-width: 768px) {
         grid-template-columns: repeat(2, 1fr);
         gap: 30px;
     }
-}
 
-@media(min-width: 1024px){
-    .resources-cards{
+    @media (min-width: 1024px) {
         grid-template-columns: repeat(3, 1fr);
     }
 }

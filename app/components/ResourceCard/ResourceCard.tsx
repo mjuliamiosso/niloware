@@ -1,22 +1,25 @@
-import './ResourceCard.scss'
-import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import React from 'react';
+import styles from './ResourceCard.module.scss';
 
 interface ResourceCardProps {
-  icon: any;
+  icon: React.ElementType;
   title: string;
   description: string;
 }
 
-const ResourceCard: React.FC<ResourceCardProps> = ({ icon, title, description }) => {
+const ResourceCard: React.FC<ResourceCardProps> = ({ icon: Icon, title, description }) => {
   return (
-    <div className='resource-card'>
-      <div className='icon'>
-        <p><FontAwesomeIcon icon={icon} /></p>
+    <div className={styles.resourceCard}>
+      <div className={styles.iconContainer}>
+        <Icon className={styles.icon} />
       </div>
-      <div className='text'>
-        <p className='title'>{title}</p>
-        <p className='description'>{description}</p>
+      <div className={styles.text}>
+        <p className={styles.title}>
+          {title}
+        </p>
+        <p className={styles.description}>
+          {description}
+        </p>
       </div>
     </div>
   )
