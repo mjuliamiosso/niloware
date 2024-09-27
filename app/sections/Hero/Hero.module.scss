@@ -30,7 +30,14 @@
 
 @media (min-width: 1024px) {
     .hero-container {
-        padding-right: 45%;
+        padding-right: 50%;
+
+    }
+}
+
+@media (min-width: 1630px) {
+    .hero-container {
+        padding-right: 800px;
 
     }
 }
