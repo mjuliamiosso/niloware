@@ -16,6 +16,7 @@ const CardCarousel: React.FC<CardCarouselProps> = ({ images }) => {
     slidesToScroll: 3,
     autoplay: true,
     autoplaySpeed: 5000,
+    arrows: false,
     responsive: [
       {
         breakpoint: 1024,
