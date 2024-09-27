@@ -6,14 +6,34 @@
     font-family: $ff-secondary;
 }
 
-.ff-secondary{
+.ff-secondary {
     font-family: $ff-secondary;
 }
 
-.dark{
+.dark {
     color: $text;
 }
 
-.light{
+.light {
     color: $light-bg;
+}
+
+@mixin container {
+    max-width: 768px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    @media (min-width: 768px) {
+        max-width: 1440px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    @media (min-width: 1024px) {
+        max-width: 1440px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 }
