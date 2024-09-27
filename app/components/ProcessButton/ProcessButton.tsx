@@ -1,14 +1,18 @@
-import React from 'react'
-import styles from './ProcessButton.module.scss'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {  faPlus } from '@fortawesome/free-solid-svg-icons'
+import React from 'react';
+import styles from './ProcessButton.module.scss';
 
-const ProcessButton = () => {
-  return (
-    <button className={styles['process-button']}>
-        <p>+</p>
-    </button>
-  )
+interface ProcessButtonProps {
+  event: () => void;
+  active: string;
 }
 
-export default ProcessButton
+const ProcessButton: React.FC<ProcessButtonProps> = ({ event, active }) => {
+  console.log("Active class:", active);  // Verifica se a classe 'active' está sendo passada corretamente
+  return (
+    <button onClick={event} className={`${styles['process-button']} ${active}`}>
+      <p>+</p>
+    </button>
+  );
+};
+
+export default ProcessButton;

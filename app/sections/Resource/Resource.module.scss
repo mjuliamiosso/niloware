@@ -1,0 +1,15 @@
+@import '../../styles/variables';
+
+.resources{
+    padding-top: 80px;
+    padding-bottom: 80px;
+    background-color: $light-bg;
+}
+
+@media(min-width: 1024px){
+    .resources-cards{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+}

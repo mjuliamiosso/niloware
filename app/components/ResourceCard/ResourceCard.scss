@@ -1,6 +1,6 @@
-@import '../../styles/globals.scss';
+@import '../../styles/variables';
 
-.resource-card{
+.resource-card {
     border: 1px solid $border;
     max-width: 370px;
     background-color: $light-bg;
@@ -10,7 +10,7 @@
     flex-direction: column;
     align-items: center;
 
-    .icon{
+    .icon {
         background-color: $primary;
         color: $light-bg;
         width: 96px;
@@ -19,36 +19,38 @@
         margin-bottom: 20px;
     }
 
-    .icon p{
+    .icon p {
         padding: 30px;
     }
-} 
+}
 
-.text{
+.text {
     text-align: center;
     color: $text;
 
-    .title{
+    .title {
         font-size: $fs-600;
         font-weight: 600;
         margin-bottom: 10px;
+        font-family: $ff-secondary;
     }
 
-    .description{
+    .description {
         font-size: $fs-300;
     }
 }
 
-.resource-card:hover{
+.resource-card:hover {
     background-color: $primary;
-    transition: .3s all ease-in-out;
+    transition: .4s all ease-in-out;
     transform: translateY(-7px);
-    .icon{
+
+    .icon {
         background-color: $light-bg;
         color: $primary;
     }
 
-    .text{
+    .text {
         color: $light-bg;
     }
 }

@@ -1,8 +1,8 @@
 'use client';
 
 import { ReactNode } from 'react';
-import { Provider } from 'react-redux';
-import { store } from '../store/store';
+import ThemeProvider from '../components/ThemeProvider/ThemeProvider';
+import '../styles/globals.scss';
 
 export default function LocaleLayout({
     children,
@@ -12,12 +12,12 @@ export default function LocaleLayout({
     params: { locale: string };
 }) {
     return (
-        <Provider store={store}>
+        <ThemeProvider>
             <html lang={params.locale}>
                 <body>
                     {children}
                 </body>
             </html>
-        </Provider>
+        </ThemeProvider>
     );
 }

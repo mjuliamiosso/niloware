@@ -1,0 +1,70 @@
+@import '../../styles/variables';
+
+.process{
+    background-color: $primary;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.process-details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+    
+    .process-btn{
+        margin-left: 13px;
+        display: flex;
+        gap: 30px;
+
+        .active {
+            transition: all 0.3s ease-in-out;
+            background-color: $light-bg;
+            border: 3px solid $light-bg;
+        
+            p {
+                color: $primary;
+            }
+        }
+    }
+
+    .process-text{
+        color: $light-bg;
+        text-align: center;
+
+        h4{
+            font-size: $fs-600;
+            font-family: $ff-secondary;
+            margin-bottom: 10px;
+        }
+
+        p{
+            font-size: $fs-200;
+        }
+    }
+}
+
+@media (min-width: 1024px){
+    .process-details{
+        flex-direction: row;
+        align-items: center;
+        gap: 120px;
+    
+        .process-text{
+            color: $light-bg;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+    
+            h4{
+                font-size: $fs-600;
+            }
+    
+            p{
+                font-size: $fs-200;
+            }
+        }
+    }
+}

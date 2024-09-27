@@ -1,76 +1,78 @@
-@import '../../styles/globals.scss';
+@import '../../styles/variables';
 
-.service-card-container{
+.service-card-container {
     padding: 40px;
     background-color: $light-bg;
     color: $text;
-    max-width: 387px;
+    max-width: 500px;
     width: 100%;
 }
 
-.service-card-title{
+.service-card-title {
     padding-bottom: 20px;
     border-bottom: 1px solid $border;
 }
 
-.service-card-plan{
+.service-card-plan {
     font-size: $fs-700;
     text-transform: uppercase;
+    font-family: $ff-secondary;
+    font-weight: bold;
 }
 
-.service-card-description{
+.service-card-description {
     font-size: $fs-200;
     text-transform: uppercase;
     margin-bottom: 30px;
+    letter-spacing: 1px;
 }
 
-.service-card-price{
+.service-card-price {
     font-size: $fs-200;
     margin-bottom: 30px;
 
-    span{
+    span {
         font-size: $fs-650;
     }
 }
 
-.service-card-btn{
-    width: 100%;
-    color: $light-bg;
-    background: $text;
-    border: none;
-    padding: 16px;
-    text-transform: uppercase;
-    font-size: $fs-400;
+.service-card-site p,
+.service-card-hosting p {
+    font-family: $ff-secondary;
+    font-size: $fs-300;
     font-weight: bold;
-    cursor: pointer;
 }
 
-.service-card-btn:hover{
-    background: $dark-bg;
+.service-card-container {
+    button {
+        width: 100%;
+        font-size: $fs-400;
+    }
 }
 
-.service-card-list{
+
+.service-card-list {
     padding-top: 15px;
     font-weight: bold;
 
-    div p{
+    div p {
         text-transform: uppercase;
         padding-bottom: 15px;
     }
 
-    div ul{
+    div ul {
         display: flex;
         flex-direction: column;
         gap: 10px;
     }
 
-    div ul li{
+    div ul li {
         display: flex;
         gap: 10px;
         align-items: center;
     }
 }
 
-.service-card-site{
+.service-card-site {
     padding-bottom: 20px;
 }

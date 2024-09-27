@@ -1,23 +1,24 @@
-@import '../../styles/globals.scss';
+@import '../../styles/variables';
 
-.navbar{
+.navbar {
     background-color: $dark-bg;
-    padding: 10px 0;
+    padding: 15px 0;
 }
 
-.navbar{
+.navbar {
 
-    h3{
+    h3 {
         font-size: $fs-700;
         text-transform: uppercase;
         color: $light-bg;
     }
 
-    h3 span{
+    h3 span {
         color: $primary;
     }
 
-    .navbar-btn{
+    .navbar-btn {
+        display: none;
         padding: 10px 20px;
         border: none;
         background-color: $primary;
@@ -25,22 +26,98 @@
         color: $light-bg;
         font-weight: bold;
         cursor: pointer;
+        font-family: $ff-secondary;
+        letter-spacing: 1px;
     }
 }
 
-.navbar-links{
+.navbar-container {
     display: flex;
-    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+    font-family: $ff-secondary;
+}
 
-    a{
+.navbar-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: $dark-bg;
+    width: 100%;
+    padding: 3rem;
+    gap: 20px;
+    height: 100dvh;
+
+    a {
         color: $light-bg;
+        font-size: $fs-500;
     }
 }
 
-.navbar-menu{
+
+.navbar-container .open {
+    display: flex;
+}
+
+.navbar-menu {
+    z-index: 1;
     background: none;
     border: none;
     font-size: $fs-700;
     color: $light-bg;
     cursor: pointer;
+}
+
+@media (min-width: 1024px) {
+    .navbar-links {
+        width: 365px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .navbar-links {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        padding: 0;
+        gap: 20px;
+        height: 100%;
+        // width: 442px;
+
+        a {
+            display: inline-block;
+        }
+
+        a::after {
+            content: '';
+            width: 0px;
+            height: 2px;
+            display: block;
+            background: $light-bg;
+            transition: 300ms;
+        }
+
+        a:hover::after {
+            width: 100%;
+        }
+    }
+
+    .navbar-links a:nth-child(5) {
+        display: none;
+    }
+
+    .navbar-menu {
+        display: none;
+    }
+
+    .navbar-btn {
+        display: block !important;
+    }
+
+    .navbar-btn:hover {
+        box-shadow: 0px 0px 15px 3px #347cdb80;
+        transition: all .3s ease-in-out;
+    }
 }
