@@ -16,7 +16,7 @@ const Clients = () => {
     ];
 
     return (
-        <section className={styles.clients}>
+        <section className={classNames(styles['clients'], 'background')}>
             <div className={classNames(styles['clients-container'], 'container')}>
                 <div className={styles['clients-text']}>
                     <h2 className='subtitle dark'>Clientes</h2>

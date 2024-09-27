@@ -8,6 +8,14 @@
     list-style: none;
 }
 
+.background{
+    background-image: url(../../../public/assets/bg.png);
+    background-position: center;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+}
+
 .container {
     max-width: 768px;
     margin-left: auto;

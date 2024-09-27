@@ -5,7 +5,7 @@ import classNames from 'classnames'
 
 const Services = () => {
     return (
-        <section className={styles.services}>
+        <section className={classNames(styles['services'], 'background')}>
             <div className={classNames(styles['services-container'], 'container')}>
                 <div className={styles['services-text']}>
                     <h2 className='subtitle light'>Serviços</h2>

@@ -11,7 +11,7 @@ const Faq = () => {
   ];
 
   return (
-    <section className={styles.faq}>
+    <section className={classNames(styles['faq'], 'background')}>
       <div className={classNames(styles['faq-container'], 'container')}>
         <h2 className='subtitle light'>Faq</h2>
         {/* to-do: accordion(bootstrap) */}

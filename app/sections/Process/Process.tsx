@@ -34,7 +34,7 @@ const Process = () => {
     }
 
     return (
-        <section className={styles.process}>
+        <section className={classNames(styles['process'], 'background')}>
             <div className={classNames(styles['process-container'], 'container')}>
                 <h2 className='subtitle light'>Processo</h2>
                 <div className={styles['process-details']}>

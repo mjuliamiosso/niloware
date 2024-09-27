@@ -5,7 +5,7 @@ import Button from '@/app/components/Button/Button'
 
 const Contact = () => {
   return (
-    <section className={styles.contact}>
+    <section className={classNames(styles['contact'], 'background')}>
       <div className={classNames(styles['contact-container'], 'container')}>
         <h2 className='subtitle dark'>Fale conosco</h2>
         <div className={styles['contact-input']}>
