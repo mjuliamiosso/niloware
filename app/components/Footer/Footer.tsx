@@ -19,7 +19,7 @@ const Footer = () => {
                 <div className={styles['footer-privacy']}>
                     <div className={styles['footer-privacy-container']}>
                         <a href="/[locale]/tos">Termos de Serviço</a>
-                        <a href="">Política de Privacidade</a>
+                        <a href="/[locale]/privacy">Política de Privacidade</a>
                     </div>
                     <div className={styles['footer-copyright']}>
                         <p>™ & © 2024 Niloware, Ltd. Todos os direitos reservados.</p>
