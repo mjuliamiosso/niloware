@@ -30,6 +30,12 @@
         font-family: $ff-primary;
     }
 
+    input:focus,
+    textarea:focus {
+        outline: 0;
+        border: 1px solid $dark-bg;
+    }
+
     input::placeholder,
     textarea::placeholder {
         color: $border;
