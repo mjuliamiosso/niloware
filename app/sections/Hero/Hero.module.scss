@@ -1,4 +1,5 @@
 @import '../../styles/variables';
+@import '../../styles/mixins';
 
 .hero {
     background-color: $primary;
@@ -11,10 +12,12 @@
     }
 }
 
-.hero-container {
+.container {
+    @include container;
     color: $light-bg;
 
     h1 {
+        @include subtitle;
         font-size: $fs-800;
         line-height: 3.75rem;
         margin-bottom: 20px;
@@ -29,7 +32,7 @@
 }
 
 @media (min-width: 1024px) {
-    .hero-container {
+    .container {
         padding-right: 45%;
 
     }
