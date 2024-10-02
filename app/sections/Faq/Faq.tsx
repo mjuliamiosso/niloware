@@ -4,7 +4,7 @@ import classNames from 'classnames'
 import Accordion from '../../components/Accordion/Accordion';
 
 const Faq = () => {
-  const faqItems = [
+  const items = [
     { title: 'Item 1', content: 'Descrição.' },
     { title: 'Item 2', content: 'Descrição.' },
     { title: 'Item 3', content: 'Descrição.' }
@@ -12,10 +12,14 @@ const Faq = () => {
 
   return (
     <section className={styles.faq}>
-      <div className={classNames(styles['faq-container'], 'container')}>
-        <h2 className='subtitle light'>Faq</h2>
-        {/* to-do: accordion(bootstrap) */}
-        <Accordion items={faqItems}></Accordion>
+      <div className={classNames(
+        styles.faqContainer,
+        styles.container
+      )}>
+        <h2 className={styles.subtitle}>
+          Faq
+        </h2>
+        <Accordion items={items} />
       </div>
     </section>
   )
