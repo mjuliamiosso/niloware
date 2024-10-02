@@ -4,11 +4,11 @@
   width: 100%;
 }
 
-.accordion-item {
+.accordionItem {
   border: 1px solid $border;
 }
 
-.accordion-button {
+.accordionButton {
   width: 100%;
   background: $primary;
   font-size: $fs-200;
@@ -28,12 +28,12 @@
     background: $text;
   }
 
-  p{
+  p {
     font-size: 1.5rem;
   }
 }
 
-.accordion-content {
+.accordionContent {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease-out;
@@ -50,9 +50,8 @@
 
 .active {
   max-height: 150px;
-  /* Adjust as needed */
 }
 
-.isOpen{
+.isOpen {
   background: $dark-bg;
 }
