@@ -13,7 +13,6 @@ const Faq = () => {
   return (
     <section className={styles.faq}>
       <div className={classNames(
-        styles.faqContainer,
         styles.container
       )}>
         <h2 className={styles.subtitle}>
