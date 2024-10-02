@@ -10,6 +10,11 @@
     @include container;
 }
 
+.subtitle {
+    @include subtitle;
+    color: $text;
+}
+
 .cards {
     display: grid;
     grid-template-columns: 1fr;

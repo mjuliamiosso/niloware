@@ -9,8 +9,7 @@ const Resource = () => {
     <section className={styles.resources}>
       <div className={styles.container}>
         <h2 className={classNames(
-          styles.subtitle,
-          styles.dark
+          styles.subtitle
         )}>
           Recursos
         </h2>
