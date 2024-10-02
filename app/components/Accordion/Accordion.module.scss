@@ -4,11 +4,11 @@
   width: 100%;
 }
 
-.accordionItem {
+.item {
   border: 1px solid $border;
 }
 
-.accordionButton {
+.button {
   width: 100%;
   background: $primary;
   font-size: $fs-200;
@@ -33,7 +33,7 @@
   }
 }
 
-.accordionContent {
+.content {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease-out;

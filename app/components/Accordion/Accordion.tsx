@@ -4,13 +4,13 @@ import { LiaPlusSolid } from "react-icons/lia";
 import { LiaMinusSolid } from "react-icons/lia";
 import classNames from 'classnames';
 
-interface AccordionItem {
+interface Item {
   title: string;
   content: string;
 }
 
 interface AccordionProps {
-  items: AccordionItem[];
+  items: Item[];
 }
 
 const Accordion: React.FC<AccordionProps> = ({ items }) => {
@@ -26,11 +26,11 @@ const Accordion: React.FC<AccordionProps> = ({ items }) => {
       {items.map((item, index) => (
         <div
           key={index}
-          className={styles.accordionItem}
+          className={styles.item}
         >
           <button
             className={classNames(
-              styles.accordionButton,
+              styles.button,
               { [styles.isOpen]: activeIndex === index }
             )}
             onClick={() => toggleAccordion(index)}
@@ -42,7 +42,7 @@ const Accordion: React.FC<AccordionProps> = ({ items }) => {
           </button>
           <div
             className={classNames(
-              styles.accordionContent,
+              styles.content,
               { [styles.active]: activeIndex === index }
             )}
           >
