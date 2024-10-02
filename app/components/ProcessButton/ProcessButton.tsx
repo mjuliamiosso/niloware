@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './ProcessButton.module.scss';
+import classNames from 'classnames';
 
 interface ProcessButtonProps {
   event: () => void;
@@ -7,10 +8,16 @@ interface ProcessButtonProps {
 }
 
 const ProcessButton: React.FC<ProcessButtonProps> = ({ event, active }) => {
-  console.log("Active class:", active);  // Verifica se a classe 'active' está sendo passada corretamente
   return (
-    <button onClick={event} className={`${styles['process-button']} ${active}`}>
-      <p>+</p>
+    <button
+      onClick={event}
+      className={classNames(
+        styles.button,
+        active)
+      }>
+      <p>
+        +
+      </p>
     </button>
   );
 };

@@ -1,44 +1,43 @@
 @import '../../styles/variables';
+@import '../../styles/mixins';
 
 .navbar {
     background-color: $dark-bg;
     padding: 15px 0;
-}
-
-.navbar {
 
     h3 {
         font-size: $fs-700;
         text-transform: uppercase;
         color: $light-bg;
-    }
 
-    h3 span {
-        color: $primary;
-    }
-
-    .navbar-btn {
-        display: none;
-        padding: 10px 20px;
-        border: none;
-        background-color: $primary;
-        font-size: $fs-500;
-        color: $light-bg;
-        font-weight: bold;
-        cursor: pointer;
-        font-family: $ff-secondary;
-        letter-spacing: 1px;
+        span {
+            color: $primary;
+        }
     }
 }
 
-.navbar-container {
+.button {
+    display: none;
+    padding: 10px 20px;
+    border: none;
+    background-color: $primary;
+    font-size: $fs-500;
+    color: $light-bg;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: $ff-secondary;
+    letter-spacing: 1px;
+}
+
+.container {
+    @include container;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-family: $ff-secondary;
 }
 
-.navbar-links {
+.links {
     display: none;
     flex-direction: column;
     position: absolute;
@@ -54,14 +53,13 @@
         color: $light-bg;
         font-size: $fs-500;
     }
+
+    &.open {
+        display: flex;
+    }
 }
 
-
-.navbar-container .open {
-    display: flex;
-}
-
-.navbar-menu {
+.menu {
     z-index: 1;
     background: none;
     border: none;
@@ -71,53 +69,52 @@
 }
 
 @media (min-width: 768px) {
-    .navbar-links {
+    .links {
         width: 365px;
     }
 }
 
 @media (min-width: 1024px) {
-    .navbar-links {
+    .links {
         display: flex;
         flex-direction: row;
         position: static;
         padding: 0;
         gap: 20px;
         height: 100%;
-        // width: 442px;
 
         a {
             display: inline-block;
-        }
 
-        a::after {
-            content: '';
-            width: 0px;
-            height: 2px;
-            display: block;
-            background: $light-bg;
-            transition: 300ms;
-        }
+            &::after {
+                content: '';
+                width: 0px;
+                height: 2px;
+                display: block;
+                background: $light-bg;
+                transition: 300ms;
+            }
 
-        a:hover::after {
-            width: 100%;
+            &:hover::after {
+                width: 100%;
+            }
         }
     }
 
-    .navbar-links a:nth-child(5) {
+    .links a:nth-child(5) {
         display: none;
     }
 
-    .navbar-menu {
+    .menu {
         display: none;
     }
 
-    .navbar-btn {
-        display: block !important;
-    }
+    .button {
+        display: block;
 
-    .navbar-btn:hover {
-        box-shadow: 0px 0px 15px 3px #347cdb80;
-        transition: all .3s ease-in-out;
+        &:hover {
+            box-shadow: 0px 0px 15px 3px #347cdb80;
+            transition: all .3s ease-in-out;
+        }
     }
 }
