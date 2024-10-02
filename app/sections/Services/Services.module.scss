@@ -20,21 +20,6 @@
     }
 }
 
-.select {
-    label {
-        color: $light-bg;
-        font-size: $fs-200;
-        padding-right: 10px;
-    }
-
-    select {
-        border: 1px solid $text;
-        color: $text;
-        padding: 5px 10px;
-        cursor: pointer;
-    }
-}
-
 .card {
     display: flex;
     flex-direction: column;
@@ -46,6 +31,12 @@
     .card {
         flex-direction: row;
         justify-content: space-between;
+    }
+
+    .services-select {
+        flex-direction: row;
+        align-items: center;
+        max-width: 300px;
     }
 }
 
