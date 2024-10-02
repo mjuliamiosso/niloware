@@ -12,6 +12,7 @@
     cursor: pointer;
     display: inline-block;
     transition: all .3s ease-in-out;
+    text-align: center;
 
     &:hover {
         background-color: $dark-bg;
