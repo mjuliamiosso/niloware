@@ -3,13 +3,6 @@
 @import './variables';
 @import './mixins';
 
-// colors
-$primary: #347BDB;
-$text: #29282D;
-$dark-bg: #111111;
-$light-bg: #FAFAFA;
-$border: #CBCBCB;
-
 // Fonts
 @font-face {
     font-family: 'Dinnextw1g';
@@ -48,6 +41,7 @@ $border: #CBCBCB;
     font-style: normal;
 }
 
+// Global Styles
 html {
     font-family: $ff-primary;
 }
@@ -59,18 +53,32 @@ body {
     color: var(--text-color);
 }
 
+// Typography Utility Classes
+.ff-secondary {
+    font-family: $ff-secondary;
+}
+
+// Color Utility Classes
+.dark {
+    color: $text;
+}
+
 .light {
-    --background-color: #ffffff;
-    --text-color: #000000;
+    color: $light-bg;
+}
+
+// Theme Variables
+.light {
+    --background-color: $light-bg;
+    --text-color: $text;
 }
 
 .dark {
-    --background-color: #000000;
-    --text-color: #ffffff;
+    --background-color: $dark-bg;
+    --text-color: $light-bg;
 }
 
 // Slick Carousel
-
 .slick-list {
     margin: 0 -10px;
 }
@@ -87,7 +95,7 @@ body {
     outline: none;
 }
 
-.slick-dots li{
+.slick-dots li {
     margin-right: 55px;
 }
 
