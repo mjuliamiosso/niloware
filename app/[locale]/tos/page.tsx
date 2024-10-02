@@ -1,15 +1,17 @@
 'use client';
 
+import Navbar from '@/app/components/Navbar/Navbar';
+import TermsService from '@/app/sections/TermsService/TermsService';
+import './page.scss'
 import React from 'react';
-import { useTranslation } from '../../hooks/useTranslation';
+import Footer from '@/app/components/Footer/Footer';
 
 const Tos: React.FC = () => {
-    const translations = useTranslation();
-
     return (
         <div>
-            <h1>{translations.home?.welcome}</h1>
-            <p>{translations.home?.language}</p>
+            <Navbar/>
+            <TermsService/>
+            <Footer/>
         </div>
     );
 };
