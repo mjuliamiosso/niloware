@@ -1,4 +1,3 @@
-import classNames from 'classnames'
 import styles from './Clients.module.scss'
 import { LiaExternalLinkSquareAltSolid } from "react-icons/lia";
 import CardCarousel from '../../components/CardCarousel/CardCarousel';
@@ -17,10 +16,15 @@ const Clients = () => {
 
     return (
         <section className={styles.clients}>
-            <div className={classNames(styles['clients-container'], 'container')}>
-                <div className={styles['clients-text']}>
-                    <h2 className='subtitle dark'>Clientes</h2>
-                    <a className='ff-secondary' href="">
+            <div className={styles.container}>
+                <div className={styles.text}>
+                    <h2>
+                        Clientes
+                    </h2>
+                    <a
+                        className='ff-secondary'
+                        href=""
+                    >
                         Ver portfólio completo
                         <LiaExternalLinkSquareAltSolid />
                     </a>

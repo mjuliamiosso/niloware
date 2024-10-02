@@ -1,25 +1,32 @@
 @import '../../styles/variables';
+@import '../../styles/mixins';
 
 .clients {
     background: $light-bg;
     padding: 80px 0;
 }
 
-.clients-text {
+.container {
+    @include container;
+}
+
+.text {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 48px;
 
-    h2{
+    h2 {
+        @include subtitle;
         margin-bottom: 0;
+        color: $text;
     }
+
     a {
         color: $text;
         text-transform: uppercase;
         font-size: $fs-300;
-
         display: flex;
         align-items: center;
     }
