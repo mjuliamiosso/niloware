@@ -25,10 +25,10 @@ const Footer = () => {
                 </div>
                 <div className={styles.rightContainer}>
                     <div className={styles.links}>
-                        <a href="">
+                        <a href="/[locale]/tos">
                             Termos de Uso
                         </a>
-                        <a href="">
+                        <a href="/[locale]/privacy">
                             Políticas de Privacidade
                         </a>
                     </div>
