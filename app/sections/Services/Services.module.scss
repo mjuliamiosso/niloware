@@ -16,18 +16,17 @@
 }
 
 .services-select {
+    max-width: 150px;
+    display: flex;
+    flex-direction: column;
+
     label {
         color: $light-bg;
         font-size: $fs-200;
         padding-right: 10px;
     }
 
-    select {
-        border: 1px solid $text;
-        color: $text;
-        padding: 5px 10px;
-        cursor: pointer;
-    }
+
 }
 
 .services-card {
@@ -42,10 +41,16 @@
         flex-direction: row;
         justify-content: space-between;
     }
+
+    .services-select {
+        flex-direction: row;
+        align-items: center;
+        max-width: 300px;
+    }
 }
 
-@media (min-width: 1024px){
-    .services-text{
+@media (min-width: 1024px) {
+    .services-text {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
