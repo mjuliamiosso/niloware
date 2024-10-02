@@ -1,18 +1,19 @@
 @import '../../styles/variables';
 
-.btn {
+.button {
     color: $light-bg;
     background-color: $text;
     padding: 20px;
     border: none;
-
+    text-decoration: none;
     font-size: $fs-300;
     text-transform: uppercase;
     font-weight: 600;
     cursor: pointer;
-}
-
-.btn:hover {
-    background-color: $dark-bg;
+    display: inline-block;
     transition: all .3s ease-in-out;
+
+    &:hover {
+        background-color: $dark-bg;
+    }
 }
