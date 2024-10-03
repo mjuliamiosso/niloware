@@ -1,10 +1,14 @@
 import React from 'react';
 import styles from './Services.module.scss';
 import ServiceCard from '../../components/ServiceCard/ServiceCard';
-import classNames from 'classnames'
-import Select from 'react-select'
+import Select, { StylesConfig } from 'react-select';
 
-const customStyles = {
+interface OptionType {
+    value: string;
+    label: string;
+};
+
+const customStyles: StylesConfig<OptionType> = {
     option: (provided, state) => ({
         ...provided,
         color: state.isFocused ? '#FAFAFA' : state.isSelected ? '#FAFAFA' : '#29282D',
@@ -12,16 +16,22 @@ const customStyles = {
 };
 
 const options = [
-    { value: 'none', label: 'Nenhuma' },
-    { value: 'hosting', label: 'Hospedagem' }
-]
+    {
+        value: 'none',
+        label: 'Nenhuma'
+    },
+    {
+        value: 'hosting',
+        label: 'Hospedagem'
+    }
+];
 
 const Services = () => {
     return (
         <section className={styles.services}>
             <div className={styles.container}>
                 <div className={styles.text}>
-                    <h2 className='subtitle light'>
+                    <h2>
                         Serviços
                     </h2>
                     <div className={styles.select}>
