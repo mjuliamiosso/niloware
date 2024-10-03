@@ -29,23 +29,10 @@
     gap: 20px;
 }
 
-.select {
-    display: flex;
-    flex-direction: column;
-    max-width: 150px;
-}
-
 @media (min-width: 950px) {
     .card {
         flex-direction: row;
         justify-content: space-between;
-    }
-
-    .select {
-        flex-direction: row;
-        align-items: center;
-        gap: 10px;
-        max-width: 300px;
     }
 }
 

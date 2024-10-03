@@ -19,17 +19,21 @@ const Clients = () => {
             <div className={styles.container}>
                 <div className={styles.text}>
                     <h2>
-                        Clientes
+                        Portfólio
                     </h2>
                     <a
-                        className='ff-secondary'
                         href=""
                     >
                         Ver portfólio completo
                         <LiaExternalLinkSquareAltSolid />
                     </a>
                 </div>
-                <CardCarousel images={images} />
+                <CardCarousel
+                    images={images}
+                    mainTag={'MainTag'}
+                    tag={['Tag']}
+                    title={'Título'} 
+                />
             </div>
         </section>
     )

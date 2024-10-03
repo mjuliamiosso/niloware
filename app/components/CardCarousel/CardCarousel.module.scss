@@ -1,3 +1,10 @@
+@import '../../styles/variables';
+
+.cardCarousel{
+  display: flex;
+  flex-direction: column;
+}
+
 .card {
   position: relative;
   width: 100%;
@@ -29,5 +36,37 @@
   &:active {
     outline: none;
     border-color: lightgray;
+  }
+}
+
+.text{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 0;
+
+  .title{
+    font-size: $fs-600;
+    font-weight: bold;
+    color: $text;
+  }
+}
+
+.tagContainer{
+  display: flex;
+  gap: 10px;
+
+  p{
+    color: $light-bg;
+    padding: 3px 7px;
+    border-radius: 10px;
+  }
+
+  .mainTag{
+    background-color: $primary;
+  }
+
+  .tag{
+    background-color: $text;
   }
 }

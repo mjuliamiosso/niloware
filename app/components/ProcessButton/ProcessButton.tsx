@@ -3,22 +3,20 @@ import styles from './ProcessButton.module.scss';
 import classNames from 'classnames';
 
 interface ProcessButtonProps {
-  event: () => void;
-  active: string;
+  icon: React.ElementType;
+  title: string;
+  description: string;
 }
 
-const ProcessButton: React.FC<ProcessButtonProps> = ({ event, active }) => {
+const ProcessButton: React.FC<ProcessButtonProps> = ({ icon: Icon, title, description }) => {
   return (
-    <button
-      onClick={event}
-      className={classNames(
-        styles.button,
-        active)
-      }>
-      <p>
-        +
-      </p>
-    </button>
+    <div className={styles.processButton}>
+      <Icon className={styles.icon} />
+      <div>
+        <p className={styles.title}>{title}</p>
+        <p className={styles.description}>{description}</p>
+      </div>
+    </div>
   );
 };
 

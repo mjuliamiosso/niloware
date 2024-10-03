@@ -6,12 +6,12 @@ import Button from '../Button/Button';
 interface ClientCardProps {
     plan: string;
     description: string;
-    price: number;
+    price: string;
     siteItem: string;
-    hostingItem: string;
+    textPrice: string;
 }
 
-const ServiceCard: React.FC<ClientCardProps> = ({ plan, description, price, siteItem, hostingItem }) => {
+const ServiceCard: React.FC<ClientCardProps> = ({ plan, description, price, siteItem, textPrice }) => {
     return (
         <div className={styles.container}>
             <div className={styles.title}>
@@ -22,7 +22,7 @@ const ServiceCard: React.FC<ClientCardProps> = ({ plan, description, price, site
                     {description}
                 </p>
                 <p className={styles.price}>
-                    R$
+                    {textPrice}
                     <span>
                         {price}
                     </span>

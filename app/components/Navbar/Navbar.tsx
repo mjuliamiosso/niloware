@@ -2,8 +2,14 @@ import React, { useState } from 'react';
 import styles from './Navbar.module.scss'
 import classNames from 'classnames'
 import { IoMdMenu } from "react-icons/io";
+import Link from 'next/link';
 
-const Navbar: React.FC = () => {
+interface NavbarProps {
+  link: string;
+  ref: string;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ link, ref }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -13,37 +19,29 @@ const Navbar: React.FC = () => {
   return (
     <div className={styles.navbar}>
       <div className={styles.container}>
-        <h3>Nilo
-          <span>
-            ware
-          </span>
-        </h3>
-        <div className={classNames(
-          styles.links,
-          { [styles.open]: isOpen })
-        }>
-          <a href="">
-            Recursos
-          </a>
-          <a href="">
-            Processo
-          </a>
-          <a href="">
-            Clientes
-          </a>
-          <a href="">
-            Serviços
-          </a>
-          <a href="">
-            Fale Conosco
-          </a>
-          <a href="">
-            FAQ
-          </a>
+        <div className={styles.leftSide}>
+          <Link href='/home'>
+            <h3>Nilo
+              <span>
+                ware
+              </span>
+            </h3>
+          </Link>
+
+          <div className={classNames(
+            styles.links,
+            { [styles.open]: isOpen })
+          }>
+            <a href={ref}>
+              {link}
+            </a>
+          </div>
         </div>
-        <button className={styles.button}>
-          Fale Conosco
-        </button>
+        <div>
+          <button className={styles.button}>
+            Fale Conosco
+          </button>
+        </div>
         <button
           onClick={toggleMenu}
           className={styles.menu}>

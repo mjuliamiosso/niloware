@@ -4,12 +4,12 @@
     border: 1px solid $border;
     background-color: $light-bg;
     width: 100%;
-    padding: 80px 80px;
+    padding: 20px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
     transition: .4s all ease-in-out;
     border-radius: 10px;
+    gap: 20px;
 
     &:hover {
         background-color: $primary;
@@ -29,10 +29,9 @@
 .iconContainer {
     background-color: $primary;
     color: $light-bg;
-    width: 96px;
-    height: 96px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    margin-bottom: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -50,7 +49,8 @@
     .title {
         font-size: $fs-600;
         font-weight: 600;
-        margin-bottom: 10px;
+        margin-left: -7px;
+        margin-top: -7px;
     }
 
     .description {
