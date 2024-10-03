@@ -6,7 +6,7 @@ const Contact = () => {
   return (
     <section className={styles.contact}>
       <div className={styles.container}>
-        <h2 className={styles.subtitle}>
+        <h2>
           Fale conosco
         </h2>
         <div className={styles.inputs}>
