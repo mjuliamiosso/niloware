@@ -111,7 +111,7 @@ const Contact = () => {
             sitekey={siteKey || ''}
             onChange={handleCaptchaChange}
           />
-          <Button text={loading ? 'Enviando...' : 'Enviar'} link={'#'} />
+          <Button text={loading ? 'Enviando...' : 'Enviar'} type="submit" className={styles.button} />
         </form>
         {error && <p className={styles.error}>
           {error}

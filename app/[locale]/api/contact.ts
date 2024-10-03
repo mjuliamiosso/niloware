@@ -6,31 +6,31 @@ import { ContactDTO } from '@/dtos/ContactDTO';
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
     res.setHeader('Allow', ['POST']);
-    return res.status(405).end('Method ${req.method} Not Allowed');
+    return res.status(405).end(`Method ${req.method} Not Allowed`);
   };
 
   try {
     const contactData = new ContactDTO(req.body);
 
-    const captchaSecret = process.env.RECAPTCHA_API_KEY as string;
-    const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string;
+    const captchaSecret = process.env.RECAPTCHA_SECRET_KEY as string;
 
     const recaptchaResponse = await axios.post(
-      `https://recaptchaenterprise.googleapis.com/v1/projects/niloware-1727985303128/assessments?key=${captchaSecret}`,
+      `https://www.google.com/recaptcha/api/siteverify`,
+      null,
       {
-        event: {
-          token: contactData.captchaToken,
-          siteKey: siteKey,
+        params: {
+          secret: captchaSecret,
+          response: contactData.captchaToken,
         },
       }
     );
 
-    if (!recaptchaResponse.data.tokenProperties || !recaptchaResponse.data.tokenProperties.valid) {
+    if (!recaptchaResponse.data.success) {
       return res.status(400).json({ error: 'Invalid CAPTCHA. Please try again.' });
     }
 
     const transporter = nodemailer.createTransport({
-      host: 'smpt.hostinger.com',
+      host: 'smtp.hostinger.com',
       port: 465,
       secure: true,
       auth: {
@@ -40,7 +40,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     });
 
     const mailOptions = {
-      from: '"${contactData.name}" <${contactData.email}>',
+      from: `"${contactData.name}" <${contactData.email}>`,
       to: process.env.EMAIL_USER as string,
       subject: 'New Contact Form Submission',
       text: `
@@ -61,11 +61,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     if (error instanceof Error && error.message === 'Missing required fields') {
       return res.status(400).json({ error: error.message });
-    };
+    }
 
     if (axios.isAxiosError(error) && error.response) {
       return res.status(400).json({ error: 'CAPTCHA verification failed. Please try again.' });
-    };
+    }
 
     return res.status(500).json({ error: 'An error occurred while sending the message. Please try again.' });
   };
