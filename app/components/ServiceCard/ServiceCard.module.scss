@@ -6,6 +6,7 @@
     color: $text;
     max-width: 500px;
     width: 100%;
+    border-radius: 10px;
 }
 
 .title {
@@ -16,7 +17,6 @@
 .plan {
     font-size: $fs-700;
     text-transform: uppercase;
-    font-family: $ff-secondary;
     font-weight: bold;
 }
 
@@ -47,7 +47,6 @@
     div p {
         text-transform: uppercase;
         padding-bottom: 15px;
-        font-family: $ff-secondary;
         font-size: $fs-300;
         font-weight: bold;
     }

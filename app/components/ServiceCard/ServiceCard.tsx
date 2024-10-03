@@ -28,31 +28,17 @@ const ServiceCard: React.FC<ClientCardProps> = ({ plan, description, price, site
                     </span>
                 </p>
                 <Button
-                    text='Escolher'
+                    text='Solicitar Orçamento'
                     link={''}
                     className={styles.customWidth}
                 />
             </div>
             <div className={styles.list}>
                 <div className={styles.site}>
-                    <p>
-                        Site
-                    </p>
                     <ul>
                         <li>
                             <FaCheck />
                             {siteItem}
-                        </li>
-                    </ul>
-                </div>
-                <div className={styles.host}>
-                    <p>
-                        Hospedagem
-                    </p>
-                    <ul>
-                        <li>
-                            <FaCheck />
-                            {hostingItem}
                         </li>
                     </ul>
                 </div>

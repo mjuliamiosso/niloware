@@ -6,6 +6,7 @@
 
 .item {
   border: 1px solid $border;
+  border-radius: 10px;
 }
 
 .button {
@@ -19,6 +20,8 @@
   font-weight: bold;
   text-align: left;
   transition: background 0.2s ease-in-out;
+  border-radius: 10px;
+
 
   display: flex;
   justify-content: space-between;
@@ -50,8 +53,10 @@
 
 .active {
   max-height: 150px;
+  border-radius:0px 0px 10px 10px;
 }
 
 .isOpen {
   background: $dark-bg;
+  border-radius: 10px 10px 0px 0px;
 }
