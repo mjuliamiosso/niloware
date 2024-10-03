@@ -5,9 +5,12 @@ import styles from './CardCarousel.module.scss';
 
 interface CardCarouselProps {
   images: string[];
+  mainTag: string;
+  tag: string[];
+  title: string;
 }
 
-const CardCarousel: React.FC<CardCarouselProps> = ({ images }) => {
+const CardCarousel: React.FC<CardCarouselProps> = ({ images, mainTag, tag, title }) => {
   const settings = {
     dots: true,
     infinite: true,
@@ -38,9 +41,23 @@ const CardCarousel: React.FC<CardCarouselProps> = ({ images }) => {
   return (
     <Slider {...settings} className={styles.carousel}>
       {images.map((image, index) => (
-        <div key={index} className={styles.card}>
-          <img src={image} alt={`Card ${index}`} className={styles.image} />
-          <LiaExternalLinkSquareAltSolid className={styles.icon} />
+        <div key={index} className={styles.cardCarousel}>
+          <div className={styles.card}>
+            <img
+              src={image}
+              alt={`Card ${index}`}
+              className={styles.image}
+            />
+            <LiaExternalLinkSquareAltSolid className={styles.icon} />
+          </div>
+          <div className={styles.text}>
+            <div className={styles.tagContainer}>
+              <p className={styles.mainTag}>{mainTag}</p>
+              <p className={styles.tag}>{tag}</p>
+            </div>
+            <p className={styles.title}>{title}</p>
+          </div>
+
         </div>
       ))}
     </Slider>

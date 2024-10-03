@@ -15,7 +15,9 @@ import Process from '@/app/sections/Process/Process';
 const HomePage: React.FC = () => {
     return (
         <div>
-            <Navbar />
+            <Navbar
+                link={'Recursos'}
+            />
             <Hero />
             <Resource />
             <Process />

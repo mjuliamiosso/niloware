@@ -18,6 +18,7 @@
 
 .button {
     display: none;
+    border-radius: 10px;
     padding: 10px 20px;
     border: none;
     background-color: $primary;
@@ -49,7 +50,7 @@
 
     a {
         color: $light-bg;
-        font-size: $fs-500;
+        font-size: $fs-300;
     }
 
     &.open {
@@ -73,16 +74,25 @@
 }
 
 @media (min-width: 1024px) {
+    .leftSide{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+    }
+
     .links {
         display: flex;
         flex-direction: row;
         position: static;
         padding: 0;
         gap: 20px;
+        width: 600px;
         height: 100%;
 
         a {
             display: inline-block;
+            cursor: pointer;
 
             &::after {
                 content: '';
