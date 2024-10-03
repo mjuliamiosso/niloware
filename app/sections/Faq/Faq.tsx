@@ -12,13 +12,13 @@ const Faq = () => {
 
   return (
     <section className={styles.faq}>
-      <div className={classNames(
-        styles.container
-      )}>
+      <div className={classNames(styles.container)}>
         <h2 className={styles.subtitle}>
           Faq
         </h2>
-        <Accordion items={items} />
+        <div>
+          <Accordion items={items} />
+        </div>
       </div>
     </section>
   )
