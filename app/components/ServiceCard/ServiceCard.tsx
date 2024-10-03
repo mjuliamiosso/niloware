@@ -13,24 +13,47 @@ interface ClientCardProps {
 
 const ServiceCard: React.FC<ClientCardProps> = ({ plan, description, price, siteItem, hostingItem }) => {
     return (
-        <div className={styles['service-card-container']}>
-            <div className={styles['service-card-title']}>
-                <p className={styles['service-card-plan']}>{plan}</p>
-                <p className={styles['service-card-description']}>{description}</p>
-                <p className={styles['service-card-price']}>R$<span>{price}</span></p>
-                <Button text='Escolher'/>
+        <div className={styles.container}>
+            <div className={styles.title}>
+                <p className={styles.plan}>
+                    {plan}
+                </p>
+                <p className={styles.description}>
+                    {description}
+                </p>
+                <p className={styles.price}>
+                    R$
+                    <span>
+                        {price}
+                    </span>
+                </p>
+                <Button
+                    text='Escolher'
+                    link={''}
+                    className={styles.customWidth}
+                />
             </div>
-            <div className={styles['service-card-list']}>
-                <div className={styles['service-card-site']}>
-                    <p>Site</p>
+            <div className={styles.list}>
+                <div className={styles.site}>
+                    <p>
+                        Site
+                    </p>
                     <ul>
-                        <li><FaCheck />{siteItem}</li>
+                        <li>
+                            <FaCheck />
+                            {siteItem}
+                        </li>
                     </ul>
                 </div>
-                <div className={styles['service-card-hosting']}>
-                    <p>Hospedagem</p>
+                <div className={styles.host}>
+                    <p>
+                        Hospedagem
+                    </p>
                     <ul>
-                        <li><FaCheck />{hostingItem}</li>
+                        <li>
+                            <FaCheck />
+                            {hostingItem}
+                        </li>
                     </ul>
                 </div>
             </div>
