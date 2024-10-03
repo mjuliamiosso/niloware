@@ -12,14 +12,22 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   try {
     const contactData = new ContactDTO(req.body);
 
-    const captchaSecret = process.env.REPTCHA_SECRET_KEY as string;
-    const captchaResponse = await axios.post(
-      `https://www.google.com/recaptcha/api/siteverify?secret=${captchaSecret}&response=${contactData.captchaToken}`
+    const captchaSecret = process.env.RECAPTCHA_API_KEY as string;
+    const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string;
+
+    const recaptchaResponse = await axios.post(
+      `https://recaptchaenterprise.googleapis.com/v1/projects/niloware-1727985303128/assessments?key=${captchaSecret}`,
+      {
+        event: {
+          token: contactData.captchaToken,
+          siteKey: siteKey,
+        },
+      }
     );
 
-    if (!captchaResponse.data.success) {
+    if (!recaptchaResponse.data.tokenProperties || !recaptchaResponse.data.tokenProperties.valid) {
       return res.status(400).json({ error: 'Invalid CAPTCHA. Please try again.' });
-    };
+    }
 
     const transporter = nodemailer.createTransport({
       host: 'smpt.hostinger.com',
