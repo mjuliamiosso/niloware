@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styles from './Contact.module.scss';
 import Button from '@/app/components/Button/Button';
+import { useParams } from 'next/navigation';
 import axios from 'axios';
 import ReCAPTCHA from 'react-google-recaptcha';
 
@@ -17,6 +18,8 @@ const Contact = () => {
   const [success, setSuccess] = useState<boolean>(false);
 
   const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
+  const params = useParams();
+  const locale = params?.locale || 'en-us';
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -43,9 +46,10 @@ const Contact = () => {
     }
 
     try {
-      const response = await axios.post('/api/[locale]/contact', {
+      const response = await axios.post(`/api/contact`, {
         ...formData,
-        captchaToken
+        captchaToken,
+        locale,
       });
 
       if (response.status === 200) {
@@ -68,13 +72,10 @@ const Contact = () => {
   return (
     <section className={styles.contact}>
       <div className={styles.container}>
-        <h2>
-          Fale conosco
-        </h2>
+        <h2>Fale conosco</h2>
         <form
           className={styles.inputs}
-          onSubmit={handleSubmit}
-        >
+          onSubmit={handleSubmit}>
           <input
             type="text"
             name="name"
@@ -111,7 +112,10 @@ const Contact = () => {
             sitekey={siteKey || ''}
             onChange={handleCaptchaChange}
           />
-          <Button text={loading ? 'Enviando...' : 'Enviar'} type="submit" className={styles.button} />
+          <Button
+            text={loading ? 'Enviando...' : 'Enviar'}
+            type="submit" className={styles.button}
+          />
         </form>
         {error && <p className={styles.error}>
           {error}
@@ -120,8 +124,8 @@ const Contact = () => {
           Mensagem enviada com sucesso!
         </p>}
       </div>
-    </section >
-  )
-}
+    </section>
+  );
+};
 
-export default Contact
+export default Contact;

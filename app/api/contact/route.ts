@@ -1,16 +1,12 @@
-import { NextApiRequest, NextApiResponse } from 'next';
+import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 import axios from 'axios';
 import { ContactDTO } from '@/dtos/ContactDTO';
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== 'POST') {
-    res.setHeader('Allow', ['POST']);
-    return res.status(405).end(`Method ${req.method} Not Allowed`);
-  };
-
+export async function POST(req: NextRequest) {
   try {
-    const contactData = new ContactDTO(req.body);
+    const reqData = await req.json();
+    const contactData = new ContactDTO(reqData);
 
     const captchaSecret = process.env.RECAPTCHA_SECRET_KEY as string;
 
@@ -26,7 +22,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     );
 
     if (!recaptchaResponse.data.success) {
-      return res.status(400).json({ error: 'Invalid CAPTCHA. Please try again.' });
+      return NextResponse.json({ error: 'Invalid CAPTCHA. Please try again.' }, { status: 400 });
     }
 
     const transporter = nodemailer.createTransport({
@@ -35,13 +31,14 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       secure: true,
       auth: {
         user: process.env.EMAIL_USER as string,
-        pass: process.env.EMAIL_PASS as string
-      }
+        pass: process.env.EMAIL_PASS as string,
+      },
     });
 
     const mailOptions = {
-      from: `"${contactData.name}" <${contactData.email}>`,
+      from: `"${contactData.name}" <niloware@niloware.com>`,
       to: process.env.EMAIL_USER as string,
+      replyTo: contactData.email,
       subject: 'New Contact Form Submission',
       text: `
       You have a new contact form submission:
@@ -50,23 +47,23 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         Email: ${contactData.email}
         Phone: ${contactData.phone}
         Message: ${contactData.message}
-      `
+      `,
     };
 
     await transporter.sendMail(mailOptions);
 
-    return res.status(200).json({ message: 'Message sent successfully!' });
+    return NextResponse.json({ message: 'Message sent successfully!' }, { status: 200 });
   } catch (error) {
     console.error('Error:', error);
 
     if (error instanceof Error && error.message === 'Missing required fields') {
-      return res.status(400).json({ error: error.message });
+      return NextResponse.json({ error: error.message }, { status: 400 });
     }
 
     if (axios.isAxiosError(error) && error.response) {
-      return res.status(400).json({ error: 'CAPTCHA verification failed. Please try again.' });
+      return NextResponse.json({ error: 'CAPTCHA verification failed. Please try again.' }, { status: 400 });
     }
 
-    return res.status(500).json({ error: 'An error occurred while sending the message. Please try again.' });
-  };
-};
+    return NextResponse.json({ error: 'An error occurred while sending the message. Please try again.' }, { status: 500 });
+  }
+}
