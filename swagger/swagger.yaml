@@ -1,0 +1,72 @@
+openapi: 3.0.0
+info:
+  title: Contact Form API
+  version: "1.0.0"
+  description: API for sending contact form messages
+
+servers:
+  - url: http://localhost:3000/api
+
+paths:
+  /contact:
+    post:
+      summary: Send a contact message
+      description: Sends a message from the contact form to the specified email address.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Contact"
+      responses:
+        "200":
+          description: Message sent successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Message sent successfully!"
+        "400":
+          description: Bad request (missing fields or invalid CAPTCHA)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Missing required fields or CAPTCHA"
+        "500":
+          description: Server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "An error occurred while sending the message. Please try again later."
+
+components:
+  schemas:
+    Contact:
+      type: object
+      properties:
+        name:
+          type: string
+          example: "John Doe"
+        email:
+          type: string
+          example: "john.doe@example.com"
+        phone:
+          type: string
+          example: "1234567890"
+        message:
+          type: string
+          example: "Hello, I would like to know more about your services."
+        captchaToken:
+          type: string
+          example: "reCAPTCHA-token-here"
