@@ -17,6 +17,12 @@
     }
 }
 
+.arrow{
+    width: 90px;
+    height: auto;
+    transform: rotate(90deg);
+}
+
 .processContainer {
     display: flex;
     flex-direction: column;
@@ -28,7 +34,13 @@
     .processContainer {
         flex-direction: row;
         align-items: center;
-        gap: 120px;
+        gap: 20px;
         justify-content: space-between;
+    }
+
+    .arrow{
+        width: 110px;
+        height: auto;
+        transform: rotate(0deg);
     }
 }
