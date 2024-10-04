@@ -10,8 +10,8 @@
 
 .container {
     @include container;
-}
 
-.subtitle {
-    @include subtitle;
+    h2 {
+        @include subtitle;
+    }
 }
