@@ -1,17 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Slider from 'react-slick';
-import { LiaExternalLinkSquareAltSolid } from 'react-icons/lia';
+import Image from 'next/image';
 import styles from './CardCarousel.module.scss';
 import { HiOutlineExternalLink } from "react-icons/hi";
 
-interface CardCarouselProps {
-  images: string[];
+interface Card {
+  image: string;
   mainTag: string;
   tag: string[];
   title: string;
 }
 
-const CardCarousel: React.FC<CardCarouselProps> = ({ images, mainTag, tag, title }) => {
+interface CardCarouselProps {
+  cards: Card[];
+}
+
+const CardCarousel: React.FC<CardCarouselProps> = ({ cards }) => {
+
   const settings = {
     dots: true,
     infinite: true,
@@ -41,24 +46,36 @@ const CardCarousel: React.FC<CardCarouselProps> = ({ images, mainTag, tag, title
 
   return (
     <Slider {...settings} className={styles.carousel}>
-      {images.map((image, index) => (
+      {cards.map((card, index) => (
         <div key={index} className={styles.cardCarousel}>
           <div className={styles.card}>
-            <img
-              src={image}
+            <Image
+              src={card.image}
               alt={`Card ${index}`}
               className={styles.image}
+              width={500}
+              height={300}
             />
             <HiOutlineExternalLink className={styles.icon} />
           </div>
           <div className={styles.text}>
             <div className={styles.tagContainer}>
-              <p className={styles.mainTag}>{mainTag}</p>
-              <p className={styles.tag}>{tag}</p>
+              <p className={styles.mainTag}>
+                {card.mainTag}
+              </p>
+              {card.tag.map((subTag, subIndex) => (
+                <p
+                  key={subIndex}
+                  className={styles.tag}
+                >
+                  {subTag}
+                </p>
+              ))}
             </div>
-            <p className={styles.title}>{title}</p>
+            <p className={styles.title}>
+              {card.title}
+            </p>
           </div>
-
         </div>
       ))}
     </Slider>
