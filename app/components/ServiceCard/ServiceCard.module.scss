@@ -58,8 +58,14 @@
 
         li {
             display: flex;
+            font-size: $fs-200;
             gap: 10px;
             align-items: center;
+        }
+        
+        li span{
+            font-size: $fs-500;
+            margin-top: 6px;
         }
     }
 }

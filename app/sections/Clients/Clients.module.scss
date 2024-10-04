@@ -4,6 +4,8 @@
 .clients {
     background: $light-bg;
     padding: 80px 0;
+    max-width: 1920px;
+    margin: auto;
 }
 
 .container {
@@ -29,5 +31,10 @@
         font-size: $fs-200;
         display: flex;
         align-items: center;
+    }
+
+    a span{
+        margin-top: 2px;
+        padding-left: 5px;
     }
 }
