@@ -1,7 +1,11 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { usePathname, useRouter, useParams } from 'next/navigation';
+import { LuGlobe } from "react-icons/lu";
+import styles from './LanguaToggle.module.scss'
+import Link from 'next/link';
+import classNames from 'classnames';
 
 const languages = [
     { code: 'en-us', label: 'English (US)' },
@@ -22,9 +26,15 @@ const LanguageToggle = () => {
         router.push(newPathname);
     };
 
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setIsOpen(!isOpen);
+    };
+
     return (
         <div>
-            {languages.map((language) => (
+            {/* {languages.map((language) => (
                 <button
                     key={language.code}
                     onClick={() => handleLanguageChange(language.code)}
@@ -32,7 +42,29 @@ const LanguageToggle = () => {
                 >
                     {language.label}
                 </button>
-            ))}
+            ))} */}
+            <button
+                className={styles.toggleButton}
+                onClick={toggleMenu}>
+                <LuGlobe />
+            </button>
+            <div className={classNames(
+                styles.links,
+                { [styles.open]: isOpen })
+            }>
+                <Link
+                    href={''}>
+                    English (US)
+                </Link>
+                <Link
+                    href={''}>
+                    Português (BR)
+                </Link>
+                <Link
+                    href={''}>
+                    Español
+                </Link>
+            </div>
         </div>
     );
 };
