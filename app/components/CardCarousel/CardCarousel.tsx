@@ -2,6 +2,7 @@ import React from 'react';
 import Slider from 'react-slick';
 import { LiaExternalLinkSquareAltSolid } from 'react-icons/lia';
 import styles from './CardCarousel.module.scss';
+import { HiOutlineExternalLink } from "react-icons/hi";
 
 interface CardCarouselProps {
   images: string[];
@@ -48,7 +49,7 @@ const CardCarousel: React.FC<CardCarouselProps> = ({ images, mainTag, tag, title
               alt={`Card ${index}`}
               className={styles.image}
             />
-            <LiaExternalLinkSquareAltSolid className={styles.icon} />
+            <HiOutlineExternalLink className={styles.icon} />
           </div>
           <div className={styles.text}>
             <div className={styles.tagContainer}>
