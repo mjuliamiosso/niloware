@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { toggleTheme } from "../../store/slices/themeSlice";
 import { RootState } from '../../store/store';
 import styles from './ThemeToggle.module.scss';
-import { IoSunnySharp, IoMoonSharp } from 'react-icons/io5';
+import { IoMoon, IoSunny  } from "react-icons/io5";
 
 const ThemeToggle: React.FC = () => {
     const dispatch = useDispatch();
@@ -19,7 +19,7 @@ const ThemeToggle: React.FC = () => {
             onClick={handleToggle}
             aria-label="Toggle Theme"
         >
-            {theme === 'light' ? <IoMoonSharp /> : <IoSunnySharp />}
+            {theme === 'light' ? <IoMoon /> : <IoSunny />}
         </button>
     );
 };

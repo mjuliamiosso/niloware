@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './ServiceCard.module.scss'
-import { FaCheck } from "react-icons/fa";
+import { IoCheckmarkCircle } from "react-icons/io5";
 import Button from '../Button/Button';
 
 interface ClientCardProps {
@@ -37,7 +37,7 @@ const ServiceCard: React.FC<ClientCardProps> = ({ plan, description, price, site
                 <div className={styles.site}>
                     <ul>
                         <li>
-                            <FaCheck />
+                            <span><IoCheckmarkCircle /></span>
                             {siteItem}
                         </li>
                     </ul>

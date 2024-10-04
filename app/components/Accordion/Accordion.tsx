@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import styles from './Accordion.module.scss';
-import { LiaPlusSolid } from "react-icons/lia";
-import { LiaMinusSolid } from "react-icons/lia";
+import { FaPlus, FaMinus  } from "react-icons/fa6";
 import classNames from 'classnames';
 
 interface Item {
@@ -37,7 +36,7 @@ const Accordion: React.FC<AccordionProps> = ({ items }) => {
           >
             {item.title}
             <p>
-              {activeIndex === index ? <LiaMinusSolid /> : <LiaPlusSolid />}
+              {activeIndex === index ? <FaMinus  /> : <FaPlus />}
             </p>
           </button>
           <div
