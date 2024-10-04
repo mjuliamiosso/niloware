@@ -39,8 +39,28 @@ const Contact = () => {
     setError(null);
     setSuccess(false);
 
+    if (formData.name.length < 3) {
+      setError('Name must be at least 3 characters.');
+      setLoading(false);
+      return;
+    }
+    if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
+      setError('Please enter a valid email address.');
+      setLoading(false);
+      return;
+    }
+    if (!/^\d{10,}$/.test(formData.phone)) {
+      setError('Phone number must be at least 10 digits.');
+      setLoading(false);
+      return;
+    }
+    if (formData.message.length < 10) {
+      setError('Message must be at least 10 characters.');
+      setLoading(false);
+      return;
+    }
     if (!captchaToken) {
-      setError('Please complete the CAPTCHA');
+      setError('Please complete the CAPTCHA.');
       setLoading(false);
       return;
     }
@@ -82,6 +102,7 @@ const Contact = () => {
             placeholder="Nome"
             value={formData.name}
             onChange={handleChange}
+            minLength={3}
             required
           />
           <div className={styles.contacts}>
@@ -91,6 +112,7 @@ const Contact = () => {
               placeholder="E-mail"
               value={formData.email}
               onChange={handleChange}
+              pattern="^\S+@\S+\.\S+$"
               required
             />
             <input
@@ -99,6 +121,8 @@ const Contact = () => {
               placeholder="Telefone"
               value={formData.phone}
               onChange={handleChange}
+              pattern="^\d{10,}$"
+              required
             />
           </div>
           <textarea
@@ -106,6 +130,7 @@ const Contact = () => {
             placeholder="Escreva sua mensagem"
             value={formData.message}
             onChange={handleChange}
+            minLength={10}
             required
           />
           <ReCAPTCHA
