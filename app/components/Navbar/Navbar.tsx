@@ -3,6 +3,7 @@ import styles from './Navbar.module.scss'
 import classNames from 'classnames'
 import { IoMdMenu } from "react-icons/io";
 import Link from 'next/link';
+import ThemeToggle from '../ThemeToggle/ThemeToggle';
 
 interface NavbarProps {
   link: string;
@@ -37,16 +38,18 @@ const Navbar: React.FC<NavbarProps> = ({ link, ref }) => {
             </a>
           </div>
         </div>
-        <div>
+        <div className={styles.rightSide}>
+          <ThemeToggle />
           <button className={styles.button}>
             Fale Conosco
           </button>
+          <button
+            onClick={toggleMenu}
+            className={styles.menu}>
+            <IoMdMenu />
+          </button>
         </div>
-        <button
-          onClick={toggleMenu}
-          className={styles.menu}>
-          <IoMdMenu />
-        </button>
+
       </div>
     </div>
   )
