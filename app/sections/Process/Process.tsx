@@ -20,7 +20,7 @@ const Process: React.FC = () => {
         <section className={styles.process}>
             <div className={styles.container}>
                 <h2>
-                    Processo
+                    {process?.title}
                 </h2>
                 <div className={styles.processContainer}>
                     {process?.steps?.map((step, index) => (

@@ -13,8 +13,12 @@ const ProcessButton: React.FC<ProcessButtonProps> = ({ icon: Icon, title, descri
     <div className={styles.processButton}>
       <Icon className={styles.icon} />
       <div>
-        <p className={styles.title}>{title}</p>
-        <p className={styles.description}>{description}</p>
+        <p className={styles.title}>
+          {title}
+        </p>
+        <p className={styles.description}>
+          {description}
+        </p>
       </div>
     </div>
   );
