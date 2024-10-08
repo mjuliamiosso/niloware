@@ -39,11 +39,18 @@
   }
 }
 
+.description,
 .title{
-  font-weight: bold;
-  font-size: $fs-300;
+  font-size: $fs-200;
+  color: $text;
 }
 
-.description{
-  font-size: $fs-200;
+.title{
+  font-weight: bold;
+
+  &:hover{
+    color: $primary;
+    transition: all .3s ease-in-out;
+  }
 }
+
