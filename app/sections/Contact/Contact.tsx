@@ -139,6 +139,7 @@ const Contact: React.FC = () => {
             required
           />
           <ReCAPTCHA
+            className={styles.captcha}
             sitekey={siteKey || ''}
             onChange={handleCaptchaChange}
           />

@@ -50,7 +50,7 @@
     }
 
     button {
-        margin-top: 38px;
+        margin-top: 28px;
         font-size: $fs-400;
     }
 }
@@ -72,4 +72,8 @@
         flex-direction: row;
         gap: 10px;
     }
+}
+
+.captcha{
+    margin: auto;
 }
