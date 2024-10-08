@@ -4,13 +4,9 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 
 type Translations = {
-    home?: {
-        welcome: string;
-        language: string;
-    };
-    tos?: {
+    clients?: {
         title: string;
-        language: string;
+        viewAll: string;
     };
 };
 
