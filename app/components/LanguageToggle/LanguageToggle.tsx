@@ -2,9 +2,8 @@
 
 import React, { useState } from 'react';
 import { usePathname, useRouter, useParams } from 'next/navigation';
-import { LuGlobe } from "react-icons/lu";
+import { LuGlobe, LuCheck } from "react-icons/lu";
 import styles from './LanguaToggle.module.scss'
-import Link from 'next/link';
 import classNames from 'classnames';
 
 const languages = [
@@ -12,6 +11,8 @@ const languages = [
     { code: 'pt-br', label: 'Português (BR)' },
     { code: 'es', label: 'Español' },
 ];
+
+const sortedLanguages = languages.sort((a, b) => a.label.localeCompare(b.label));
 
 const LanguageToggle = () => {
     const router = useRouter();
@@ -34,15 +35,6 @@ const LanguageToggle = () => {
 
     return (
         <div>
-            {/* {languages.map((language) => (
-                <button
-                    key={language.code}
-                    onClick={() => handleLanguageChange(language.code)}
-                    disabled={language.code === currentLocale}
-                >
-                    {language.label}
-                </button>
-            ))} */}
             <button
                 className={styles.toggleButton}
                 onClick={toggleMenu}>
@@ -52,18 +44,19 @@ const LanguageToggle = () => {
                 styles.links,
                 { [styles.open]: isOpen })
             }>
-                <Link
-                    href={''}>
-                    English (US)
-                </Link>
-                <Link
-                    href={''}>
-                    Português (BR)
-                </Link>
-                <Link
-                    href={''}>
-                    Español
-                </Link>
+                {sortedLanguages.map((language) => (
+                    <button
+                        key={language.code}
+                        onClick={() => handleLanguageChange(language.code)}
+                        className={classNames(styles.languageOption, {
+                            [styles.active]: language.code === currentLocale,
+                        })}
+                        disabled={language.code === currentLocale}
+                    >
+                        {language.label}
+                        {language.code === currentLocale && <LuCheck className={styles.checkIcon} />}
+                    </button>
+                ))}
             </div>
         </div>
     );
