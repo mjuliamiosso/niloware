@@ -1,10 +1,6 @@
 {
-  "home": {
-      "welcome": "Bienvenido a Niloware",
-      "language": "Español"
-  },
-  "tos": {
-      "title": "Términos de Servicio",
-      "language": "Español"
+  "clients": {
+    "title": "Portfólio 2",
+    "viewAll": "Ver Portfólio Completo 2"
   }
 }
