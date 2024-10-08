@@ -3,7 +3,7 @@ import styles from './Button.module.scss'
 import classNames from 'classnames';
 
 interface buttonProps {
-  text: string;
+  text?: string;
   link?: string;
   className?: string;
   type?: 'button' | 'submit' | 'reset';
