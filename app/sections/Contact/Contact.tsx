@@ -134,6 +134,7 @@ const Contact = () => {
             required
           />
           <ReCAPTCHA
+            className={styles.captcha}
             sitekey={siteKey || ''}
             onChange={handleCaptchaChange}
           />
