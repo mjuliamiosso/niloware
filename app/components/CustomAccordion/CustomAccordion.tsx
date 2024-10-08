@@ -32,8 +32,25 @@ const CustomAccordion: React.FC<CustomAccordionProps> = ({ items }) => {
           key={index}
           expanded={expanded === index}
           onChange={handleChange(index)}
-          className={styles.accordion}
           disableGutters
+          sx={{
+            borderRadius: '10px',
+            boxShadow: '0 2px 5px rgba(0, 0, 0, 0.1)',
+            overflow: 'hidden',
+            border: '1px solid transparent',
+            '&:first-of-type': {
+              borderTopLeftRadius: '10px',
+              borderTopRightRadius: '10px',
+            },
+            '&:last-of-type': {
+              borderBottomLeftRadius: '10px',
+              borderBottomRightRadius: '10px',
+            },
+            '&.Mui-expanded': {
+              margin: '0',
+              borderRadius: '10px',
+            },
+          }}
         >
           <AccordionSummary expandIcon={<ExpandMoreIcon />}>
             <Typography>
