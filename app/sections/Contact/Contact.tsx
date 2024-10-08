@@ -4,8 +4,11 @@ import Button from '@/app/components/Button/Button';
 import { useParams } from 'next/navigation';
 import axios from 'axios';
 import ReCAPTCHA from 'react-google-recaptcha';
+import { useTranslation } from '../../hooks/useTranslation';
 
-const Contact = () => {
+const Contact: React.FC = () => {
+  const { contact } = useTranslation();
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -40,27 +43,27 @@ const Contact = () => {
     setSuccess(false);
 
     if (formData.name.length < 3) {
-      setError('Name must be at least 3 characters.');
+      setError(contact?.errors.name || 'Name must be at least 3 characters.');
       setLoading(false);
       return;
     }
     if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
-      setError('Please enter a valid email address.');
+      setError(contact?.errors.email || 'Please enter a valid email address.');
       setLoading(false);
       return;
     }
     if (!/^\d{10,}$/.test(formData.phone)) {
-      setError('Phone number must be at least 10 digits.');
+      setError(contact?.errors.phone || 'Phone number must be at least 10 digits.');
       setLoading(false);
       return;
     }
     if (formData.message.length < 10) {
-      setError('Message must be at least 10 characters.');
+      setError(contact?.errors.message || 'Message must be at least 10 characters.');
       setLoading(false);
       return;
     }
     if (!captchaToken) {
-      setError('Please complete the CAPTCHA.');
+      setError(contact?.errors.captcha || 'Please complete the CAPTCHA.');
       setLoading(false);
       return;
     }
@@ -83,7 +86,7 @@ const Contact = () => {
         setCaptchaToken(null);
       }
     } catch (err) {
-      setError('Failed to send message. Please try again later.');
+      setError(contact?.errors.general || 'Failed to send message. Please try again later.');
     } finally {
       setLoading(false);
     }
@@ -92,14 +95,16 @@ const Contact = () => {
   return (
     <section className={styles.contact}>
       <div className={styles.container}>
-        <h2>Fale conosco</h2>
+        <h2>
+          {contact?.title}
+        </h2>
         <form
           className={styles.inputs}
           onSubmit={handleSubmit}>
           <input
             type="text"
             name="name"
-            placeholder="Nome"
+            placeholder={contact?.placeholders.name}
             value={formData.name}
             onChange={handleChange}
             minLength={3}
@@ -109,7 +114,7 @@ const Contact = () => {
             <input
               type="email"
               name="email"
-              placeholder="E-mail"
+              placeholder={contact?.placeholders.email}
               value={formData.email}
               onChange={handleChange}
               pattern="^\S+@\S+\.\S+$"
@@ -118,7 +123,7 @@ const Contact = () => {
             <input
               type="text"
               name="phone"
-              placeholder="Telefone"
+              placeholder={contact?.placeholders.phone}
               value={formData.phone}
               onChange={handleChange}
               pattern="^\d{10,}$"
@@ -127,7 +132,7 @@ const Contact = () => {
           </div>
           <textarea
             name="message"
-            placeholder="Escreva sua mensagem"
+            placeholder={contact?.placeholders.message}
             value={formData.message}
             onChange={handleChange}
             minLength={10}
@@ -138,7 +143,7 @@ const Contact = () => {
             onChange={handleCaptchaChange}
           />
           <Button
-            text={loading ? 'Enviando...' : 'Enviar'}
+            text={loading ? contact?.messages.sending : contact?.messages.send}
             type="submit" className={styles.button}
           />
         </form>
@@ -146,7 +151,7 @@ const Contact = () => {
           {error}
         </p>}
         {success && <p className={styles.success}>
-          Mensagem enviada com sucesso!
+          {contact?.messages.success}
         </p>}
       </div>
     </section>

@@ -3,6 +3,29 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 
+type ContactTranslations = {
+    title: string;
+    placeholders: {
+        name: string;
+        email: string;
+        phone: string;
+        message: string;
+    };
+    errors: {
+        name: string;
+        email: string;
+        phone: string;
+        message: string;
+        captcha: string;
+        general: string;
+    };
+    messages: {
+        success: string;
+        sending: string;
+        send: string;
+    };
+};
+
 type FaqItem = {
     title: string;
     content: string;
@@ -53,6 +76,7 @@ type Translations = {
         title: string;
         items: FaqItem[];
     };
+    contact?: ContactTranslations;
 };
 
 export const useTranslation = () => {
