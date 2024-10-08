@@ -7,11 +7,12 @@ interface ClientCardProps {
     plan: string;
     description: string;
     price: string;
-    siteItem: string;
+    siteItem: React.ReactNode;
     textPrice: string;
+    buttonText: string;
 }
 
-const ServiceCard: React.FC<ClientCardProps> = ({ plan, description, price, siteItem, textPrice }) => {
+const ServiceCard: React.FC<ClientCardProps> = ({ plan, description, price, siteItem, textPrice, buttonText }) => {
     return (
         <div className={styles.container}>
             <div className={styles.title}>
@@ -28,7 +29,7 @@ const ServiceCard: React.FC<ClientCardProps> = ({ plan, description, price, site
                     </span>
                 </p>
                 <Button
-                    text='Solicitar Orçamento'
+                    text={buttonText}
                     link={''}
                     className={styles.customWidth}
                 />
@@ -37,7 +38,6 @@ const ServiceCard: React.FC<ClientCardProps> = ({ plan, description, price, site
                 <div className={styles.site}>
                     <ul>
                         <li>
-                            <span><IoCheckmarkCircle /></span>
                             {siteItem}
                         </li>
                     </ul>

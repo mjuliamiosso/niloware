@@ -3,6 +3,15 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 
+type ServiceTranslation = {
+    plan: string;
+    description: string;
+    textPrice: string;
+    price: string;
+    siteItems: string[];
+    buttonText: string;
+};
+
 type CardTranslation = {
     title: string;
     description: string;
@@ -30,7 +39,11 @@ type Translations = {
     process?: {
         title: string;
         steps: StepTranslation[];
-    }
+    };
+    services?: {
+        title: string;
+        plans: ServiceTranslation[];
+    };
 };
 
 export const useTranslation = () => {
