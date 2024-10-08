@@ -27,12 +27,12 @@ const Clients: React.FC = () => {
             <div className={styles.container}>
                 <div className={styles.text}>
                     <h2>
-                        {clients.title}
+                        {clients?.title}
                     </h2>
                     <a
                         href=""
                     >
-                        {clients.viewAll}
+                        {clients?.viewAll}
                         <span>
                             <HiOutlineExternalLink />
                         </span>
