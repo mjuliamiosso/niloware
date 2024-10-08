@@ -36,11 +36,11 @@ const CustomAccordion: React.FC<CustomAccordionProps> = ({ items }) => {
           disableGutters
         >
           <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-            <Typography>
+            <Typography className={styles.title}>
               {item.title}
             </Typography>
           </AccordionSummary>
-          <AccordionDetails>
+          <AccordionDetails className={styles.description}>
             <Typography>
               {item.content}
             </Typography>
