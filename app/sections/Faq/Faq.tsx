@@ -1,25 +1,19 @@
 import React from 'react'
 import styles from './Faq.module.scss'
 import CustomAccordion from '@/app/components/CustomAccordion/CustomAccordion';
+import { useTranslation } from '../../hooks/useTranslation';
 
-const Faq = () => {
-  const items = [
-    { title: 'Item 1', content: 'Descrição.' },
-    { title: 'Item 2', content: 'Descrição.' },
-    { title: 'Item 3', content: 'Descrição.' },
-    { title: 'Item 4', content: 'Descrição.' },
-    { title: 'Item 5', content: 'Descrição.' },
-    { title: 'Item 6', content: 'Descrição.' }
-  ];
+const Faq: React.FC = () => {
+  const { faq } = useTranslation();
 
   return (
     <section className={styles.faq}>
       <div className={styles.container}>
         <h2>
-          Faq
+          {faq?.title}
         </h2>
         <div>
-          <CustomAccordion items={items} />
+          <CustomAccordion items={faq?.items || []} />
         </div>
       </div>
     </section>

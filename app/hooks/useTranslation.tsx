@@ -3,6 +3,11 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 
+type FaqItem = {
+    title: string;
+    content: string;
+};
+
 type ServiceTranslation = {
     plan: string;
     description: string;
@@ -43,6 +48,10 @@ type Translations = {
     services?: {
         title: string;
         plans: ServiceTranslation[];
+    };
+    faq?: {
+        title: string;
+        items: FaqItem[];
     };
 };
 
