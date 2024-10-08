@@ -1,6 +1,11 @@
 {
   "clients": {
-    "title": "Portfólio 2",
-    "viewAll": "Ver Portfólio Completo 2"
+    "title": "Portfólio",
+    "viewAll": "Ver Portfólio Completo"
+  },
+  "hero": {
+    "title": "Texto",
+    "subtitle": "Texto",
+    "cta": "Texto"
   }
 }

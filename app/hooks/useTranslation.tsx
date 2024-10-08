@@ -8,6 +8,11 @@ type Translations = {
         title: string;
         viewAll: string;
     };
+    hero?: {
+        title: string;
+        subtitle: string;
+        cta: string;
+    };
 };
 
 export const useTranslation = () => {
