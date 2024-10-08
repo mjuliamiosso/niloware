@@ -8,6 +8,11 @@ type CardTranslation = {
     description: string;
 };
 
+type StepTranslation = {
+    title: string;
+    description: string;
+};
+
 type Translations = {
     clients?: {
         title: string;
@@ -22,6 +27,10 @@ type Translations = {
         title: string;
         cards: CardTranslation[];
     };
+    process?: {
+        title: string;
+        steps: StepTranslation[];
+    }
 };
 
 export const useTranslation = () => {

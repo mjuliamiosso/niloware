@@ -4,8 +4,17 @@ import styles from './Process.module.scss';
 import ProcessButton from '@/app/components/ProcessButton/ProcessButton';
 import { FaPencilRuler } from 'react-icons/fa';
 import Arrow from '../../../public/assets/arrow.png';
+import { useTranslation } from '../../hooks/useTranslation';
 
-const Process = () => {
+const Process: React.FC = () => {
+    const { process } = useTranslation();
+
+    const icons = [
+        FaPencilRuler,
+        FaPencilRuler,
+        FaPencilRuler,
+        FaPencilRuler
+    ];
 
     return (
         <section className={styles.process}>
@@ -14,41 +23,22 @@ const Process = () => {
                     Processo
                 </h2>
                 <div className={styles.processContainer}>
-                    <ProcessButton
-                        icon={FaPencilRuler}
-                        title='Título'
-                        description='Descrição'
-                    />
-                    <Image
-                        className={styles.arrow}
-                        src={Arrow}
-                        alt="arrow"
-                    />
-                    <ProcessButton
-                        icon={FaPencilRuler}
-                        title='Título'
-                        description='Descrição'
-                    />
-                    <Image
-                        className={styles.arrow}
-                        src={Arrow}
-                        alt="arrow"
-                    />
-                    <ProcessButton
-                        icon={FaPencilRuler}
-                        title='Título'
-                        description='Descrição'
-                    />
-                    <Image
-                        className={styles.arrow}
-                        src={Arrow}
-                        alt="arrow"
-                    />
-                    <ProcessButton
-                        icon={FaPencilRuler}
-                        title='Título'
-                        description='Descrição'
-                    />
+                    {process?.steps?.map((step, index) => (
+                        <React.Fragment key={index}>
+                            <ProcessButton
+                                icon={icons[index]}
+                                title={step.title}
+                                description={step.description}
+                            />
+                            {index < process.steps.length - 1 && (
+                                <Image
+                                    className={styles.arrow}
+                                    src={Arrow}
+                                    alt="arrow"
+                                />
+                            )}
+                        </React.Fragment>
+                    ))}
                 </div>
             </div>
         </section>
