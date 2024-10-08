@@ -136,5 +136,10 @@
         "content": "Descrição do Item 6."
       }
     ]
+  },
+  "footer": {
+    "tos": "Termos de Uso",
+    "privacy": "Políticas de Privacidade",
+    "copyright": "™ & © 2024 Niloware, Ltd. Todos os direitos reservados."
   }
 }

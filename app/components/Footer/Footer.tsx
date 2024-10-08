@@ -4,10 +4,12 @@ import { FaXTwitter } from "react-icons/fa6";
 import styles from './Footer.module.scss'
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
+import { useTranslation } from '../../hooks/useTranslation';
 
 const Footer = () => {
     const params = useParams();
     const locale = params.locale;
+    const { footer } = useTranslation();
 
     return (
         <footer className={styles.footer}>
@@ -31,15 +33,15 @@ const Footer = () => {
                 <div className={styles.rightContainer}>
                     <div className={styles.links}>
                         <Link href={`/${locale}/tos`}>
-                            Termos de Uso
+                            {footer?.tos}
                         </Link>
                         <Link href={`/${locale}/privacy`}>
-                            Políticas de Privacidade
+                            {footer?.privacy}
                         </Link>
                     </div>
                     <div className={styles.copyright}>
                         <p>
-                            ™ & © 2024 Niloware, Ltd. Todos os direitos reservados.
+                            {footer?.copyright}
                         </p>
                     </div>
                 </div>

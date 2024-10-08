@@ -3,6 +3,12 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 
+type FooterTranslations = {
+    tos: string;
+    privacy: string;
+    copyright: string;
+};
+
 type ContactTranslations = {
     title: string;
     placeholders: {
@@ -77,6 +83,7 @@ type Translations = {
         items: FaqItem[];
     };
     contact?: ContactTranslations;
+    footer?: FooterTranslations;
 };
 
 export const useTranslation = () => {
