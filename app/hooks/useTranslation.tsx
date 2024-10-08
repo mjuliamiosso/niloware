@@ -3,6 +3,11 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 
+type CardTranslation = {
+    title: string;
+    description: string;
+};
+
 type Translations = {
     clients?: {
         title: string;
@@ -12,6 +17,10 @@ type Translations = {
         title: string;
         subtitle: string;
         cta: string;
+    };
+    resource?: {
+        title: string;
+        cards: CardTranslation[];
     };
 };
 
