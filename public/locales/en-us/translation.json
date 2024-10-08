@@ -1,10 +1,14 @@
 {
-  "home": {
-      "welcome": "Welcome to Niloware",
-      "language": "English"
+  "clients": {
+    "title": "Portfólio",
+    "viewAll": "Ver Portfólio Completo"
   },
-  "tos": {
-      "title": "Terms of Service",
-      "language": "English"
+  "hero": {
+    "title": "Texto",
+    "subtitle": "Texto",
+    "cta": "Texto"
+  },
+  "resource": {
+    "title": "Texto"
   }
 }

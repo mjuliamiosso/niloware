@@ -1,22 +1,23 @@
 import React from 'react'
-import classNames from 'classnames';
 import styles from './Hero.module.scss'
 import Button from '../../components/Button/Button'
+import { useTranslation } from '../../hooks/useTranslation';
 
-const Hero = () => {
+const Hero: React.FC = () => {
+  const { hero } = useTranslation();
+
   return (
     <header className={styles.hero}>
       <div className={styles.container}>
         <h1>
-          Transforme Seu Negócio com um Site Profissional
+          {hero?.title}
         </h1>
         <h3>
-          Sites WordPress rápidos, responsivos e fáceis de gerenciar,
-          feitos sob medida para aumentar sua presença online e impulsionar o crescimento do seu negócio.
+          {hero?.subtitle}
         </h3>
         <Button
           link='#'
-          text='Confira nossos planos'
+          text={hero?.cta}
         />
       </div>
     </header>
