@@ -26,8 +26,8 @@ export async function POST(req: NextRequest) {
     }
 
     const transporter = nodemailer.createTransport({
-      host: 'smtp.hostinger.com',
-      port: 465,
+      host: process.env.EMAIL_HOST as string,
+      port: parseInt(process.env.EMAIL_PORT as string, 10),
       secure: true,
       auth: {
         user: process.env.EMAIL_USER as string,
@@ -36,7 +36,7 @@ export async function POST(req: NextRequest) {
     });
 
     const mailOptions = {
-      from: `"${contactData.name}" <niloware@niloware.com>`,
+      from: `"${contactData.name}" <${process.env.EMAIL_USER}>`,
       to: process.env.EMAIL_USER as string,
       replyTo: contactData.email,
       subject: 'New Contact Form Submission',
