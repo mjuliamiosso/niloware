@@ -2,6 +2,14 @@ import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 import axios from 'axios';
 import { ContactDTO } from '@/dtos/ContactDTO';
+import fs from 'fs';
+import path from 'path';
+
+const loadTranslations = async (locale: string) => {
+  const filePath = path.join(process.cwd(), 'public', 'locales', locale, 'translation.json');
+  const fileContents = await fs.promises.readFile(filePath, 'utf8');
+  return JSON.parse(fileContents);
+};
 
 export async function POST(req: NextRequest) {
   try {
@@ -9,6 +17,10 @@ export async function POST(req: NextRequest) {
     const contactData = new ContactDTO(reqData);
 
     const captchaSecret = process.env.RECAPTCHA_SECRET_KEY as string;
+
+    const locale = reqData.locale || 'en-us';
+
+    const translations = await loadTranslations(locale);
 
     const recaptchaResponse = await axios.post(
       `https://www.google.com/recaptcha/api/siteverify`,
@@ -39,14 +51,14 @@ export async function POST(req: NextRequest) {
       from: `"${contactData.name}" <${process.env.EMAIL_USER}>`,
       to: process.env.EMAIL_USER as string,
       replyTo: contactData.email,
-      subject: 'New Contact Form Submission',
+      subject: translations.contact.title,
       text: `
-      You have a new contact form submission:
+      ${translations.contact.title}:
 
-        Name: ${contactData.name}
-        Email: ${contactData.email}
-        Phone: ${contactData.phone}
-        Message: ${contactData.message}
+      ${translations.contact.placeholders.name}: ${contactData.name}
+      ${translations.contact.placeholders.email}: ${contactData.email}
+      ${translations.contact.placeholders.phone}: ${contactData.phone}
+      ${translations.contact.placeholders.message}: ${contactData.message}
       `,
     };
 
