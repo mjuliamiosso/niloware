@@ -61,7 +61,7 @@
         "plan": "Expresso",
         "description": "Modelo pré-pronto, rápido e acessível. A solução ideal para quem precisa de um site simples e funcional, com páginas limitadas e uma implementação rápida.",
         "textPrice": "A PARTIR DE ",
-        "price": "R$ 599,90 + R$ 89,90/mês (hospedagem, manutenção e suporte)",
+        "price": "R$ 599,90",
         "siteItems": [
           "Até 5 páginas",
           "Modelo padronizado",
@@ -73,7 +73,8 @@
           "Guias e tutoriais de gerenciamento",
           "Conformidade com a LGPD"
         ],
-        "buttonText": "Solicitar Orçamento"
+        "buttonText": "Solicitar Orçamento",
+        "extraPrice": "+ R$ 89,90/mês de hospedagem, manutenção e suporte"
       },
       {
         "plan": "Sob Medida",
