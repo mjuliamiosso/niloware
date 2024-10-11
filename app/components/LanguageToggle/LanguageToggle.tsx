@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { usePathname, useRouter, useParams } from 'next/navigation';
 import { LuGlobe, LuCheck } from "react-icons/lu";
 import styles from './LanguaToggle.module.scss'
@@ -19,6 +19,7 @@ const LanguageToggle = () => {
     const pathname = usePathname();
     const params = useParams();
     const currentLocale = params?.locale || 'en-us';
+    const dropdownRef = useRef<HTMLDivElement>(null);
 
     const handleLanguageChange = (lang: string) => {
         if (lang === currentLocale) return;
@@ -33,8 +34,21 @@ const LanguageToggle = () => {
         setIsOpen(!isOpen);
     };
 
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+                setIsOpen(false);
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
+
     return (
-        <div>
+        <div ref={dropdownRef}>
             <button
                 className={styles.toggleButton}
                 onClick={toggleMenu}>
