@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import styles from './Process.module.scss';
 import ProcessButton from '@/app/components/ProcessButton/ProcessButton';
-import { FaPencilRuler } from 'react-icons/fa';
+import { FaPhoneAlt, FaClipboardList, FaCheckCircle, FaShareSquare } from 'react-icons/fa';
 import Arrow from '../../../public/assets/arrow.png';
 import { useTranslation } from '../../hooks/useTranslation';
 
@@ -10,10 +10,10 @@ const Process: React.FC = () => {
     const { process } = useTranslation();
 
     const icons = [
-        FaPencilRuler,
-        FaPencilRuler,
-        FaPencilRuler,
-        FaPencilRuler
+        FaPhoneAlt,
+        FaClipboardList,
+        FaCheckCircle,
+        FaShareSquare
     ];
 
     return (
