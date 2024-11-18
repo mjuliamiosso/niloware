@@ -29,11 +29,17 @@
 
 .price {
     font-size: $fs-200;
-    margin-bottom: 30px;
+    margin-bottom: 0px;
 
     span {
         font-size: $fs-650;
     }
+}
+
+.extraPrice {
+    font-size: $fs-200;
+    text-transform: uppercase;
+    margin-bottom: 30px;  
 }
 
 .customWidth {

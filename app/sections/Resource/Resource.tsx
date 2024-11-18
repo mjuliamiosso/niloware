@@ -2,19 +2,19 @@ import React from 'react'
 import styles from './Resource.module.scss'
 import classNames from 'classnames';
 import ResourceCard from '@/app/components/ResourceCard/ResourceCard';
-import { FaPencilRuler } from 'react-icons/fa';
+import { FaDesktop, FaPaintBrush, FaRocket, FaShapes, FaCogs, FaHeadset  } from 'react-icons/fa';
 import { useTranslation } from '../../hooks/useTranslation';
 
 const Resource: React.FC = () => {
   const { resource } = useTranslation();
 
   const icons = [
-    FaPencilRuler,
-    FaPencilRuler,
-    FaPencilRuler,
-    FaPencilRuler,
-    FaPencilRuler,
-    FaPencilRuler
+    FaDesktop,
+    FaPaintBrush,
+    FaRocket,
+    FaShapes,
+    FaCogs,
+    FaHeadset 
   ];
 
   return (
